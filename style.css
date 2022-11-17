@@ -1,7 +1,16 @@
+/*imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* Colors */
 
 --root {
     --red: #f43545;
@@ -11,11 +20,13 @@
     --violet: #5f2879;
 }
 
-.color-change-div {
+/* Color change class */
+.color-change {
     height: 100vh;
     animation: animate 100s ease infinite;
 }
 
+/* Color change animation */
 @keyframes animate{
     0%{
         background-color: #f43545;
@@ -51,4 +62,100 @@
         background-color: #f43545;
     }
 }
+
+/*Score counter boxes*/
+.score-counter {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #00ba71;
+}
+
+.score-counter-2 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;
+}
+
+.score-counter-3 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #00ba71;
+}
+
+.score-counter-4 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;
+}
+
+.score-counter-5 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Monofett', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #00ba71;
+}
+
+.score-counter-6 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Monofett', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;
+}
+
+.score-counter-7 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Geostar Fill', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #00ba71;
+}
+
+.score-counter-8 {
+    text-align: right;
+    margin-left: 2rem;
+    height: 100px;
+    width: 50rem;
+    font-family: 'Geostar Fill', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;
+}
+
+
+
+
+
+
+
 
