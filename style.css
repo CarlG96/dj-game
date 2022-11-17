@@ -1,3 +1,18 @@
+
+/*Pop-up*/
+
+.instruc-popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.show {
+    visibility: visible; 
+}
+
+/* Background colour change */
+
 * {
     margin: 0;
     padding: 0;
