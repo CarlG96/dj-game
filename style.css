@@ -1,3 +1,5 @@
+/*imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /*Pop-up*/
 
@@ -16,7 +18,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* Colors */
@@ -69,6 +70,56 @@
     }
     100%{
         background-color: #f43545;
+    }
+}
+
+/*Score counter boxes*/
+
+.funky-animation {
+    border: 10px solid #f43545;
+    border-radius: 6rem;
+    padding: 1rem;
+    text-align: right;
+    margin-left: 2rem;
+    height: 70px;
+    width: 25rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;   
+    animation: hover-score-reverse 0.5s;
+}
+
+.funky-animation:hover {
+    animation: hover-score 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes hover-score{
+    0%{
+        border-radius: 6rem;
+        color:#f43545;
+    }
+    100%{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 8rem;
+        color:#5f2879;
+        border-color:#00ba71;
+    }
+}
+
+@keyframes hover-score-reverse{
+    0%{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 8rem;
+        color:#5f2879;
+        border-color:#00ba71;
+    }
+    100%{
+        border-radius: 6rem;
+        color:#f43545;
     }
 }
 
