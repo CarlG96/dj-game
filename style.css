@@ -11,6 +11,17 @@
     margin: auto;
 }
 
+#start-game {
+    border: 2px solid black; 
+    animation: animate 4.5s ease infinite;
+    border-radius: 5px;
+    color: white;
+}
+
+#start-game:hover {
+    animation-play-state: paused;
+}
+
 .hide {
     visibility: none; 
     display: none;
