@@ -296,17 +296,20 @@ body {
 /* main buttons */
 .qube .main_buttons {
     height: 690px;
+    padding-top: 4rem;
+    padding-left: 1rem;
 }
 
 .qube .main_buttons .main_buttons_square{
     width: 75%;
     float: left;
-    
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
 }
 
 .qube .main_buttons .square {
-    width: 54px;
-    height: 54px;
+    width: 120px;
+    height: 120px;
 
     
     
