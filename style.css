@@ -101,7 +101,7 @@ body {
     left: -15%;
   }
 
-  x4{
+  .x4{
     -webkit-animation: floatUp 4.5s infinite linear;
     -moz-animation: floatUp 4.5s infinite linear;
     -o-animation: floatUp 4.5s infinite linear;
@@ -267,16 +267,18 @@ body {
 .funky-animation {
     border: 10px solid #f43545;
     border-radius: 6rem;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: right;
     margin-left: 2rem;
     height: 70px;
-    width: 25rem;
+    width: 22rem;
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     background-color: #000000;
     color: #f43545;   
     animation: hover-score-reverse 0.5s;
+    float: right;
+    position: static;
 }
 
 .funky-animation:hover {
@@ -475,7 +477,7 @@ body {
 
 .qube .main_buttons .main_buttons_square{
     width: 75%;
-    float: left;
+    float: left; 
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
