@@ -7,25 +7,11 @@ function startGame() {
     popup.classList.add('hide');
 }
 
-const gameButtons = document.getElementsByClassName('square');
-for(let i=0; i < gameButtons.length; ++i){
-    gameButtons[i].addEventListener('keydown', () => {
-        console.log(`Hello World ${[i]}`);
-    } )
-}
-
-const gameStart = () => {
-    
-}
-
-
-
-const gameArray = [];
-const playerArray = [];
-
+scoreCounter = document.getElementById('score-counter');
 
 hotkeys('q', () => {
-    
+    console.log("add score")
+    scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
 })
 
 hotkeys('w', () => {
