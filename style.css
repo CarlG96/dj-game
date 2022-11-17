@@ -1,14 +1,19 @@
 
 /*Pop-up*/
 
-.instruc-popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+#instruc-popup {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 0.5px white;
+    margin: auto;
 }
 
-.show {
-    visibility: visible; 
+.hide {
+    visibility: none; 
+    display: none;
 }
 
 /* Background colour change */
