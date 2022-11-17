@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+--root {
+    --red: #f43545;
+    --orange: #fa8901;
+    --green: #00ba71;
+    --blue: #00c2de;
+    --violet: #5f2879;
+}
+
+.color-change-div {
+    height: 100vh;
+    animation: animate 100s ease infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-color: #f43545;
+    }
+    10%{
+        background-color: #fa8901;
+    }
+    20%{
+        background-color: #fad717;
+    }
+    30%{
+        background-color: #00ba71;
+    }
+    40%{
+        background-color: #00c2de;
+    }
+    50%{
+        background-color: #5f2879;
+    }
+    60%{
+        background-color: #00c2de;
+    }
+    70%{
+        background-color: #00ba71;
+    }
+    80%{
+        background-color: #fad717;
+    }
+    90%{
+        background-color: #fa8901;
+    }
+    100%{
+        background-color: #f43545;
+    }
+}
+
