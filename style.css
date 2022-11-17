@@ -16,7 +16,10 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* Colors */
 
 --root {
     --red: #f43545;
@@ -26,11 +29,13 @@
     --violet: #5f2879;
 }
 
-.color-change-div {
+/* Color change class */
+.color-change {
     height: 100vh;
     animation: animate 100s ease infinite;
 }
 
+/* Color change animation */
 @keyframes animate{
     0%{
         background-color: #f43545;
