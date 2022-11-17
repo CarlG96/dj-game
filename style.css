@@ -67,3 +67,259 @@
     }
 }
 
+/* Dj box */
+
+* {
+    margin: 10px;
+    padding: 0;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+
+body {
+    background-color: lightgray;
+}
+.qube_icons span {
+    font-weight: bold;
+    
+}
+
+.qube .qube_elements_box .qube_icons .border {
+   border-bottom: 2px solid white;
+   border-top: 2px solid white;
+}
+
+.border-orange{
+    background-color: orange;
+    width: 8%;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.border-orange-right {
+    background-color: orange;
+    width: 70%;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid white;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid white;
+}
+
+.arrow-right-r {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid white;
+    margin: 5px auto;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+/* Main qube */
+.qube {
+    
+    background: linear-gradient(132deg, #838080, #353636, #010311);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    
+    overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    
+    
+    
+   
+    position: relative;
+    
+    width: 850px;
+    height: 850px;
+
+    border-radius: 5%;
+
+    margin: 0 auto;
+}
+
+/* First elements at the top */
+.qube .qube_elements_box {
+    height: 40px;
+}
+
+.qube .qube_elements_box .qube_icons {
+    display: flex;
+    color: white;
+    font-weight: bold;
+
+}
+
+/* circles at the top */
+.qube .qube_circles_top {
+    height: 70px;
+    padding-left: 12px;
+}
+
+
+.qube .qube_circles_top .circle_top {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    display: inline-block;
+
+    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+}
+
+.qube .qube_circles_top .qube_text {
+    float: right;
+    display:inline-flex;
+    text-transform: uppercase;
+    color: white;
+}
+
+.qube .qube_circles_top .qube_text span{
+    font-weight: bold;
+    border-left: 2px solid white;
+
+    font-size: large;
+}
+
+/* main buttons */
+.qube .main_buttons {
+    height: 690px;
+}
+
+.qube .main_buttons .main_buttons_square{
+    width: 75%;
+    float: left;
+    
+}
+
+.qube .main_buttons .square {
+    width: 54px;
+    height: 54px;
+
+    
+    
+    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+    display: inline-block;
+
+    border-radius: 5px;
+
+}
+
+.qube .main_buttons .main_buttons_text_l {
+    text-transform: uppercase;
+    float: left;
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
+
+.qube .main_buttons .main_buttons_text_r {
+    text-transform: uppercase;
+    float: right;
+    font-weight: bolder;
+    color: orange;
+    font-size: x-large;
+}
+
+.qube .main_buttons .main_buttons_text_r span {
+    color:white;
+    background-color:rgba(251, 192, 147);
+    border: 5px solid orange;
+    border-radius: 5px;
+    
+
+}
+
+/* circle at the right corner */
+
+.qube .main_buttons .qube_area_right {
+   float: right;
+   height: 670px;
+   width: 162px;
+  
+    
+}
+
+
+.qube .main_buttons .qube_area_right .qube_area_right_circles {
+    float: left;
+    width: 40%;
+    height: 650px;
+    
+}
+
+.qube .main_buttons .qube_area_right .qube_area_right_elements {
+    float: right;
+    width: 45%;
+    height: 650px;
+
+    float: right;
+
+    margin: 5px auto;
+    display: block;
+    text-align: center;
+
+   
+    font-size: small;
+}
+
+.qube .main_buttons .qube_area_right .qube_area_right_circles .circle_right {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+    display: inline-block;
+    
+    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+}
+
+/* hover */
+
+
+.button:active {
+    border-top: 1px solid #777;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%)
+}
