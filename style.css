@@ -477,6 +477,9 @@ body {
 
 .qube .main_buttons .main_buttons_square{
     width: 75%;
+    float: left;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
     float: left; 
     font-family: 'Press Start 2P', cursive;
     text-align: center;
