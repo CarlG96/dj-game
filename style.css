@@ -1,3 +1,6 @@
+/*imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     margin: 0;
     height: 100vh;
@@ -12,16 +15,35 @@ body {
     animation: fadeIn 1 1s ease-out;
 }
 
+/*imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*Pop-up*/
 
-.instruc-popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+#instruc-popup {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 0.5px white;
+    margin: auto;
 }
 
-.show {
-    visibility: visible; 
+#start-game {
+    border: 2px solid black; 
+    animation: animate 4.5s ease infinite;
+    border-radius: 5px;
+    color: white;
+}
+
+#start-game:hover {
+    animation-play-state: paused;
+}
+
+.hide {
+    visibility: none; 
+    display: none;
 }
 /* Animation for BG */
 
@@ -187,6 +209,8 @@ body {
     padding: 0;
 }
 
+/* Colors */
+
 --root {
     --red: #f43545;
     --orange: #fa8901;
@@ -195,11 +219,13 @@ body {
     --violet: #5f2879;
 }
 
-.color-change-div {
+/* Color change class */
+.color-change {
     height: 100vh;
     animation: animate 100s ease infinite;
 }
 
+/* Color change animation */
 @keyframes animate{
     0%{
         background-color: #f43545;
@@ -233,6 +259,56 @@ body {
     }
     100%{
         background-color: #f43545;
+    }
+}
+
+/*Score counter boxes*/
+
+.funky-animation {
+    border: 10px solid #f43545;
+    border-radius: 6rem;
+    padding: 1rem;
+    text-align: right;
+    margin-left: 2rem;
+    height: 70px;
+    width: 25rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    background-color: #000000;
+    color: #f43545;   
+    animation: hover-score-reverse 0.5s;
+}
+
+.funky-animation:hover {
+    animation: hover-score 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes hover-score{
+    0%{
+        border-radius: 6rem;
+        color:#f43545;
+    }
+    100%{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 8rem;
+        color:#5f2879;
+        border-color:#00ba71;
+    }
+}
+
+@keyframes hover-score-reverse{
+    0%{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 8rem;
+        color:#5f2879;
+        border-color:#00ba71;
+    }
+    100%{
+        border-radius: 6rem;
+        color:#f43545;
     }
 }
 
@@ -393,21 +469,24 @@ body {
 /* main buttons */
 .qube .main_buttons {
     height: 690px;
+    padding-top: 4rem;
+    padding-left: 1rem;
 }
 
 .qube .main_buttons .main_buttons_square{
     width: 75%;
     float: left;
-    
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
 }
 
 .qube .main_buttons .square {
-    width: 54px;
-    height: 54px;
+    width: 120px;
+    height: 120px;
 
     
     
-    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+    /* background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%); */
     display: inline-block;
 
     border-radius: 5px;

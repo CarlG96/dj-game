@@ -1,5 +1,8 @@
-let popup = document.getElementsByClassName('instruc-popup')
+const popup = document.getElementById('instruc-popup');
+const startButton = document.getElementById('start-game');
 
-popUp() {
-    popup.classList.toggle('show')
+startButton.addEventListener('click', startGame);
+
+function startGame() {
+    popup.classList.add('hide');
 }
