@@ -4,9 +4,14 @@
 
 ### Game Ideology 
 
+The idea of this game is to allow the user to engage through a fun audio and visual sensed game. Enabling the indivdual to pas time bettering theier own score and compete against others. 
+
 ### User Stories 
 
+
+
 ### logos 
+
 
 ### Wireframes
 
