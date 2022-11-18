@@ -588,3 +588,109 @@ body {
     opacity: 0.5;
     transform: scale(0.8);
 }
+
+/* notes animation */
+.note-position-1 {
+    top: 150px;
+    color: white;
+}
+
+.note-position-2 {
+    top: 250px;
+    left: 80px;
+
+}
+
+.note-position-3 {
+    top: 190px;
+    left: 70px;
+    color: white;
+}
+
+.note-position-4 {
+    top: 135px;
+    left: 55px;
+}
+
+.note-position-5 {
+    top: 150px;
+    color: white;
+    right: 90px;
+}
+
+.note-position-6 {
+    top: 250px;
+    right: 80px;
+
+}
+
+.note-position-7 {
+    top: 190px;
+    right: 70px;
+    color: white;
+}
+
+.note-position-8 {
+    top: 135px;
+    right: 55px;
+}
+
+.note-position-9 {
+    top: 750px;
+    color: white;
+    left: 160px;
+}
+
+.note-position-10 {
+    top: 750px;
+    right: 160px;
+
+}
+
+.note-position-11 {
+    top: 550px;
+    left: 290px;
+}
+
+.note-position-12 {
+    top: 550px;
+    right: 290px;
+    color: white;
+}
+
+
+
+.animation-delay-1 {
+    animation-delay: 2s;
+}
+
+.animation-delay-2 {
+    animation-delay: 4s;
+}
+
+.note-amination {
+    position: absolute;
+    font-size: 35px;
+    animation-name: notes;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0;
+}
+
+@keyframes notes {
+    0% {
+        font-size: 55px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        font-size: 90px;
+        margin-top: -150px;
+        opacity: 0;
+    }
+}
