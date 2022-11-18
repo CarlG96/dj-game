@@ -12,6 +12,8 @@ const audioZ = document.getElementById('audioZ');
 const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
+const mainSong = document.getElementById('mainSong');
+const gameButtons = document.getElementsByClassName('square');
 
 // startButton.addEventListener('click', startGame);
 
@@ -24,6 +26,10 @@ scoreCounter = document.getElementById('score-counter');
 const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
 }
+
+hotkeys('space', () => {
+    mainSong.play();
+})
 
 hotkeys('q', () => {
     audioQ.play();
@@ -38,7 +44,7 @@ hotkeys('e', () => {
 })
 
 hotkeys('r', () => {
-    audioF.play();
+    audioR.play();
 })
 
 hotkeys('a', () => {
