@@ -292,8 +292,6 @@ body {
         border-top-right-radius: 2rem;
         border-bottom-left-radius: 2rem;
         border-top-left-radius: 8rem;
-        /* color:#5f2879;
-        border-color:#00ba71; */
     }
     50%{
         border-radius: 6rem;
@@ -577,5 +575,5 @@ body {
 /* For when a button is pressed in the memory game */
 .press {
     opacity: 0.5;
-    transform: scale(0.95);
+    transform: scale(0.8);
 }
