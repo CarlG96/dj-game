@@ -35,6 +35,17 @@ body {
     animation: animate 4.5s ease infinite;
     border-radius: 5px;
     color: white;
+
+}
+
+#start-game:hover {
+    animation-play-state: paused;
+}
+
+.hide {
+    visibility: none; 
+    display: none;
+
 }
 
 #start-game:hover {

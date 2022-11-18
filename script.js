@@ -16,8 +16,12 @@ const mainSong = document.getElementById('mainSong');
 const gameButtons = document.getElementsByClassName('square');
 
 
+window.onload = popup
 
-// startButton.addEventListener('click', startGame);
+
+
+startButton.addEventListener('click', startGame);
+
 
 function startGame() {
     popup.classList.add('hide');
