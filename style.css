@@ -18,6 +18,22 @@ body {
 /*imports */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+
+/* Logo */
+
+.logo h2 {
+    font-weight: bold;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#icon {
+    background-color: black;
+    border: ridge 3px white;
+    border-radius: 25%;
+}
+
+
+
 /*Pop-up*/
 
 #instruc-popup {
