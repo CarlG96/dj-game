@@ -276,43 +276,39 @@ body {
     font-size: 3rem;
     background-color: #000000;
     color: #f43545;   
-    animation: hover-score-reverse 0.5s;
+    animation: hover-score 2s infinite;
     float: right;
     position: static;
 }
 
-.funky-animation:hover {
-    animation: hover-score 0.5s;
-    animation-fill-mode: both;
-}
+
 
 @keyframes hover-score{
     0%{
         border-radius: 6rem;
         color:#f43545;
     }
-    100%{
+    25%{
         border-top-right-radius: 2rem;
         border-bottom-left-radius: 2rem;
         border-top-left-radius: 8rem;
-        color:#5f2879;
-        border-color:#00ba71;
+        /* color:#5f2879;
+        border-color:#00ba71; */
     }
-}
-
-@keyframes hover-score-reverse{
-    0%{
-        border-top-right-radius: 2rem;
-        border-bottom-left-radius: 2rem;
-        border-top-left-radius: 8rem;
-        color:#5f2879;
-        border-color:#00ba71;
+    50%{
+        border-radius: 6rem;
+    }
+    75%{
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-right-radius: 8rem;
     }
     100%{
         border-radius: 6rem;
         color:#f43545;
     }
 }
+
 
 /* Dj box */
 
@@ -576,4 +572,10 @@ body {
     border-bottom: 1px solid #999;
     box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%)
+}
+
+/* For when a button is pressed in the memory game */
+.press {
+    opacity: 0.5;
+    transform: scale(0.95);
 }

@@ -15,6 +15,8 @@ const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
 const gameButtons = document.getElementsByClassName('square');
 
+
+
 // startButton.addEventListener('click', startGame);
 
 function startGame() {
@@ -33,14 +35,27 @@ hotkeys('space', () => {
 
 hotkeys('q', () => {
     audioQ.play();
+    gameButtons[0].classList.add('press');
+    setTimeout(() => {
+        gameButtons[0].classList.remove('press');
+    }, 150);
+   
 })
 
 hotkeys('w', () => {
     audioW.play();
+    gameButtons[1].classList.add('press');
+    setTimeout(() => {
+        gameButtons[1].classList.remove('press');
+    }, 150);
 })
 
 hotkeys('e', () => {
     audioE.play();
+    gameButtons[2].classList.add('press');
+    setTimeout(() => {
+        gameButtons[2].classList.remove('press');
+    }, 150);
 })
 
 hotkeys('r', () => {
