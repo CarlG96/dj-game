@@ -318,7 +318,6 @@ body {
     background-color: #000000;
     color: #00ba71;   
     animation: hover-score 2s infinite;
-    float: right;
     position: static;
 }
 
