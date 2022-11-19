@@ -261,22 +261,28 @@
 .funky-animation {
     border: 10px solid #f43545;
     border-radius: 6rem;
-    /* padding: 0.5rem; */
-    text-align: right;
-    height: 70px;
-    width: 22rem;
-    font-size: 3rem;
+    padding: 2.5rem;
+    text-align: center;
+    height: 100px;
+    width: calc(100vw/5);
+    font-size: 1rem;
     background-color: #000000;
     color: #00ba71;   
     animation: hover-score 2s infinite;
+}
+
+.funk {
+    margin-top: 1.5rem;
+    padding-top: 10px;
 }
 
 /* for restart button */
 .restart {
     text-align: center;
     color: #00ba71;
-    animation: none;
-    margin-top: 2.5rem;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
     height: 110px;
 }
 
@@ -284,14 +290,32 @@
 .instructions {
     margin-top: 10px;
     height: 128px;
-    width: calc(100vw/15);
-    animation: none;
     font-size: 1rem;
     text-align: center;
-    border-color: #000000;
     color: #00ba71;
     border-radius: 20%;
-    
+}
+
+/* media queries for funky animations */
+@media (max-width: 1700px){
+    .funky-animation{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 1600px){
+    .funky-animation{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 1300px){
+    .funky-animation{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 1000px){
+    .funky-animation{
+        font-size: 0.6rem;
+    }
 }
 
 @keyframes hover-score{
