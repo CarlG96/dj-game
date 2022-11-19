@@ -1,6 +1,20 @@
 /*imports */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+--root {
+    --red: #f43545;
+    --orange: #fa8901;
+    --green: #00ba71;
+    --blue: #00c2de;
+    --violet: #5f2879;
+}
 body {
     margin: 0;
     height: 100vh;
@@ -505,7 +519,6 @@ body {
     float: left;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-    float: left; 
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
@@ -713,4 +726,17 @@ body {
         margin-top: -150px;
         opacity: 0;
     }
+}
+.row{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y:0;
+    flex-wrap: nowrap !important;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+/* For the gameButtons to work without overlapping eachother */
+button {
+    margin:10px;
 }

@@ -17,15 +17,14 @@ const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
 
 // parralax for music notes
-let bg = document.querySelector('.parallax');
-window.addEventListener('mousemove', function (e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
-    bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+// let bg = document.querySelector('.parallax');
+// window.addEventListener('mousemove', function (e) {
+//     let x = e.clientX / window.innerWidth;
+//     let y = e.clientY / window.innerHeight;
+//     bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
 
-});
+// });
 
-window.onload = popup
 
 
 
@@ -50,104 +49,63 @@ hotkeys('space', () => {
     mainSong.play();
 })
 
-//button press functions, should be made into single function instead of twelve
+// onclick events on gameButtons referenced in html
 
-hotkeys('q', () => {
-    audioQ.play();
-    gameButtons[0].classList.add('press');
-    setTimeout(() => {
-        gameButtons[0].classList.remove('press');
-    }, 100);
+const keymap = {
+    81: "q",
+    87: "w",
+    69: "e",
+    82: "r",
+    65: "a",
+    83: "s",
+    68: "d",
+    70: "f",
+    90: "z",
+    88: "x",
+    67: "c",
+    86: "v"
+}
 
-})
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
-hotkeys('w', () => {
-    audioW.play();
-    gameButtons[1].classList.add('press');
-    setTimeout(() => {
-        gameButtons[1].classList.remove('press');
-    }, 100);
-})
+function removeTransition(event) {
+    
+     this.classList.remove('press');
+  }
 
-hotkeys('e', () => {
-    audioE.play();
-    gameButtons[2].classList.add('press');
-    setTimeout(() => {
-        gameButtons[2].classList.remove('press');
-    }, 100);
-})
+  function buttonHandler (key) {
+    play(key);
+  }
 
-hotkeys('r', () => {
-    audioR.play();
-    gameButtons[3].classList.add('press');
-    setTimeout(() => {
-        gameButtons[3].classList.remove('press');
-    }, 100);
-})
+  function play(key) {
+    var keyElement = document.querySelector(`.key[id="${key}"]`); 
+    var audioElement = document.querySelector(`audio[data-key="${key}"]`);
+    
+    keyElement.classList.add('press');
+    audioElement.currentTime = 0;
+    audioElement.play();
+    setInterval(() => {
+        keyElement.classList.remove('press');
+    }, 200)
+}
 
-hotkeys('a', () => {
-    audioA.play();
-    gameButtons[4].classList.add('press');
-    setTimeout(() => {
-        gameButtons[4].classList.remove('press');
-    }, 100);
-})
+window.onkeydown = (event) => {
+    var key = keymap[event.keyCode];
+    if (key) {
+      play(key);
+    }
+  }
 
-hotkeys('s', () => {
-    audioS.play();
-    gameButtons[5].classList.add('press');
-    setTimeout(() => {
-        gameButtons[5].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('d', () => {
-    audioD.play();
-    gameButtons[6].classList.add('press');
-    setTimeout(() => {
-        gameButtons[6].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('f', () => {
-    audioF.play();
-    gameButtons[7].classList.add('press');
-    setTimeout(() => {
-        gameButtons[7].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('z', () => {
-    audioZ.play();
-    gameButtons[8].classList.add('press');
-    setTimeout(() => {
-        gameButtons[8].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('x', () => {
-    audioX.play();
-    gameButtons[9].classList.add('press');
-    setTimeout(() => {
-        gameButtons[9].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('c', () => {
-    audioC.play();
-    gameButtons[10].classList.add('press');
-    setTimeout(() => {
-        gameButtons[10].classList.remove('press');
-    }, 100);
-})
 
-hotkeys('v', () => {
-    audioV.play();
-    gameButtons[11].classList.add('press');
-    setTimeout(() => {
-        gameButtons[11].classList.remove('press');
-    }, 100);
-})
+
+
+
 
 // circle sounds
 
