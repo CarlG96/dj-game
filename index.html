@@ -42,22 +42,7 @@
   <body class="color-change">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-1">
-          <!-- Modal button -->
-          <div class="logo">
-            <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />
-            <h2>DJ-GAME</h2>
-          </div>
-          <button
-            class="funky-animation instructions"
-            data-bs-toggle="modal"
-            data-bs-target="#reg-modal"
-          >
-            Rules of the game
-          </button>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-7">
+        <div class="col">
           <div>
             <!-- bg animation -->
             <div class="light x1"></div>
@@ -126,20 +111,28 @@
 
               <!--Main div of qube -->
 
-              <div class="qube">
+              <div class="qube col-12">
                 <!-- circle at the top -->
-                <div class="qube_circles_top">
-                    
-                  <div class="circle_top button"></div>
-                  <div class="circle_top button"></div>
-                  <div class="circle_top button"></div>
-                  <div class="circle_top button"></div>
-                  <div class="circle_top button"></div>
-                  <div class="circle_top button"></div>
-
-                  <!-- <div class="funky-animation">
-                    <h2>Score:<span id="score-counter"> 0</span></h2>
-                  </div> -->
+                <div class="row ms-3 pt-3">
+                    <div class="col-2">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-2">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-1">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-1">
+                        <div class="circle_top button"></div>
+                    </div>
+                  
                 </div>
 
                 <!-- main buttons -->
@@ -180,7 +173,10 @@
                       R
                         </button>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
+                        <div class="circle_top button"></div>
+                    </div>
+                    <div class="col-1">
                         <div class="circle_top button"></div>
                     </div>
                 </div>
@@ -221,7 +217,10 @@
                       F
                     </button>
                 </div>
-                <div class="col-2">
+                <div class="col-1">
+                    <div class="circle_top button"></div>
+                </div>
+                <div class="col-1">
                     <div class="circle_top button"></div>
                 </div>
                 </div>
@@ -262,14 +261,37 @@
                       V
                     </button>
                 </div>
-                <div class="col-2">
+                <div class="col-1">
+                    <div class="circle_top button"></div>
+                </div>
+                <div class="col-1">
                     <div class="circle_top button"></div>
                 </div>
                 </div>
-                    <!-- <div class="funky-animation restart">
+                <div class="row ms-2">
+                    <div class="col-2">
+                        <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />
+                    </div>
+                    <div class="col-2">
+                        <!--Modal button-->
+                        <button
+                            class="funky-animation instructions"
+                            data-bs-toggle="modal"
+                            data-bs-target="#reg-modal"
+                        >
+                        Rules of the game
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <div class="funky-animation restart">
                       <h2>Restart Game</h2>
-                    </div> -->
-                </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="funky-animation">
+                        <h2>Score:<span id="score-counter"> 0</span></h2>
+                        </div>
+                    </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -279,7 +301,7 @@
       </div>
     </div>
 
-    <!-- Modal it self
+    <!-- Modal it self -->
             <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true"
                 class="col-12 position-absolute top-50 start-50 translate-middle text-center p-3">
                 <div class="modal-dialog">
@@ -288,10 +310,10 @@
                             <h5 class="modal-title" id="modal-title">IT'S DJ DECKING LARRY</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body"> -->
+                        <div class="modal-body">
     <!-- Instructions-->
 
-    <!-- <p>How long can you keep up with the musical DJ beat?</p>
+    <p>How long can you keep up with the musical DJ beat?</p>
 
                             <p>A sequence will show on the deck, after it is ended follow the sequences and play the
                                 same musical beat.
@@ -306,7 +328,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
     <audio loop id="mainSong">
       <source

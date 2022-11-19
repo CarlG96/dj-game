@@ -261,7 +261,7 @@
 .funky-animation {
     border: 10px solid #f43545;
     border-radius: 6rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     text-align: right;
     height: 70px;
     width: 22rem;
@@ -282,14 +282,16 @@
 
 /* for instructions button */
 .instructions {
-    height: 20vh;
+    margin-top: 10px;
+    height: 128px;
+    width: calc(100vw/15);
     animation: none;
     font-size: 1rem;
     text-align: center;
     border-color: #000000;
     color: #00ba71;
     border-radius: 20%;
-    padding: 1.5rem;
+    
 }
 
 @keyframes hover-score{
@@ -336,9 +338,9 @@ a {
 
     position: relative;
     
-    width: calc((100vw/10)*6);
+    width: calc((100vw/10)*9);
     height: calc(100vh - 200px);
-    border-radius: 5%;
+    border-radius: 4%;
 }
 
 /* circles at the top */
@@ -500,9 +502,4 @@ a {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
-}
-
-/* For the gameButtons to work without overlapping eachother */
-button {
-    
 }
