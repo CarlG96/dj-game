@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
+    margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
 }
@@ -343,6 +344,11 @@
 
 /* Dj box */
 
+* {
+    margin: 10px;
+    padding: 0;
+    border: none;
+}
 
 a {
     text-decoration: none;
@@ -353,11 +359,11 @@ a {
 .qube {
     
     background: linear-gradient(132deg, #838080, #353636, #010311);
+    opacity: 0.85;
 
     position: relative;
     
     width: calc((100vw/10)*9);
-    height: calc(100vh - 200px);
     border-radius: 4%;
 }
 
@@ -370,8 +376,77 @@ a {
 
     border-radius: 50%;
     display: inline-block;
+    animation: rotate 5s infinite;
+    animation-timing-function: linear;
+}
 
-    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+.carl-photo {
+    background-image: url(./assets/images/carl-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.justin-photo {
+    background-image: url(./assets/images/justin-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.keis-photo {
+    background-image: url(./assets/images/keis-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.christian-photo {
+    background-image: url(./assets/images/christian-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.denys-photo {
+    background-image: url(./assets/images/denys-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ronny-photo {
+    background-image: url(./assets/images/ronny-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rotation-1 {
+    animation: rotate 1s infinite;
+    animation-timing-function: linear;
+}
+
+.rotation-2 {
+    animation: rotate 2s infinite;
+    animation-timing-function: linear;
+}
+
+.rotation-3 {
+    animation: rotate 10s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes reverse-rotate {
+    from {
+        transform: rotate(359deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
 }
 
 @media (max-width: 1000px) {
@@ -521,3 +596,4 @@ a {
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
+
