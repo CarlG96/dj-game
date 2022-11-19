@@ -21,7 +21,7 @@ let scoreCounter = document.getElementById('score-counter');
 let order = [];
 let playerOrder = [];
 let flash;
-let turn;
+let turn = 1;
 let good;
 let compTurn;
 let intervalId;
@@ -29,8 +29,22 @@ let noise = true;
 let on = true;
 let win = true;
 
-function clearColor() {
-
+function check() {
+    console.log("comp choices: " + order)
+    console.log("player choices: " + playerOrder)
+    if(order.length == playerOrder.length){
+        for(let i=0; i <= playerOrder.length; i++){
+            if(order[i] != playerOrder[i]){
+                win = false
+            }
+        }
+        if(win == false){
+            console.log("you fucked it")
+        }else{
+            turn ++
+            playGame()
+        }
+    }
 }
 
 function one() {
@@ -158,16 +172,17 @@ function gameTurn() {
 }
 
 function playGame() {
+    console.log("turn: " + turn)
     win = false;
     order = []
     playerOrder = []
     flash = 0
     intervalId = 0
-    turn = 1
     scoreCounter.innerText = 1;
     good = true
     for (var i = 0; i < turn; i++) {
         order.push(Math.floor(Math.random() * 12 + 1))
+        console.log("FOKKER")
     }
     compTurn = true
     intervalId = setInterval(gameTurn, 800)
@@ -175,9 +190,10 @@ function playGame() {
 }
 
 startButton.addEventListener('click', (event) => {
+    console.log("FOK")
     order = []
     playerOrder = []
-    turn = 0
+    turn = 1
     on = true
     win = true
     if (win) {
@@ -188,7 +204,7 @@ startButton.addEventListener('click', (event) => {
 restartButton.addEventListener('click', (event) => {
     order = []
     playerOrder = []
-    turn = 0
+    turn = 1
     compTurn = 0
     on = true
     win = true
@@ -259,6 +275,7 @@ function removeTransition(event) {
 
 function buttonHandler(key) {
     play(key);
+    check();
 }
 
 function play(key) {
@@ -270,15 +287,55 @@ function play(key) {
     setInterval(() => {
         keyElement.classList.remove('press');
     }, 200)
+    switch (key) {
+        case 'q':
+            playerOrder.push(1)
+            break;
+        case 'w':
+            playerOrder.push(2)
+            break;
+        case 'e':
+            playerOrder.push(3)
+            break;
+        case 'r':
+            playerOrder.push(4)
+            break;
+        case 'a':
+            playerOrder.push(5)
+            break;
+        case 's':
+            playerOrder.push(6)
+            break;
+        case 'd':
+            playerOrder.push(7)
+            break;
+        case 'f':
+            playerOrder.push(8)
+            break;
+        case 'z':
+            playerOrder.push(9)
+            break;
+        case 'x':
+            playerOrder.push(10)
+            break;
+        case 'c':
+            playerOrder.push(11)
+            break;
+        case 'v':
+            playerOrder.push(12)
+            break;
+        default:
+            break;
+    }
 }
 
 window.onkeydown = (event) => {
-    console.log("jou poes")
     var key = keymap[event.keyCode];
     if (key) {
-      play(key);
+        play(key);
     }
-  }
+    check();
+}
 
 
 
