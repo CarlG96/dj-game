@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
+    margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
 }
@@ -343,6 +344,11 @@
 
 /* Dj box */
 
+* {
+    margin: 10px;
+    padding: 0;
+    border: none;
+}
 
 a {
     text-decoration: none;
@@ -521,3 +527,4 @@ a {
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
+
