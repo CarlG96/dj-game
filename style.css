@@ -5,8 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 * {
-    margin: 0;
     padding: 0;
+    margin: 10px;
+    border: none;
 }
 --root {
     --red: #f43545;
@@ -27,6 +28,7 @@ body {
     -moz-animation: fadeIn 1 1s ease-out;
     -o-animation: fadeIn 1 1s ease-out;
     animation: fadeIn 1 1s ease-out;
+    background-color: lightgray;
 }
 
 /*imports */
@@ -245,10 +247,6 @@ body {
 
 /* Background colour change */
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
 /* Colors */
 
@@ -310,16 +308,39 @@ body {
     border-radius: 6rem;
     padding: 0.5rem;
     text-align: right;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     height: 70px;
     width: 22rem;
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     background-color: #000000;
-    color: #f43545;   
+    color: #00ba71;   
     animation: hover-score 2s infinite;
-    float: right;
     position: static;
+}
+
+/* for restart button */
+.restart {
+    text-align: center;
+    color: #00ba71;
+    float: none;
+    margin-left: 0;
+    animation: none;
+    margin-top: 2.5rem;
+    height: 110px;
+}
+
+/* for instructions button */
+.instructions {
+    height: auto;
+    width: auto;
+    animation: none;
+    text-align: center;
+    border-color: #000000;
+    color: #00ba71;
+    border-radius: 20%;
+    padding: 1.5rem;
+    /* margin-left: 4rem; */
 }
 
 
@@ -327,7 +348,7 @@ body {
 @keyframes hover-score{
     0%{
         border-radius: 6rem;
-        color:#f43545;
+        color:#00ba71;
     }
     25%{
         border-top-right-radius: 2rem;
@@ -344,18 +365,13 @@ body {
     }
     100%{
         border-radius: 6rem;
-        color:#f43545;
+        color:#00ba71;
     }
 }
 
 
 /* Dj box */
 
-* {
-    margin: 10px;
-    padding: 0;
-    border: none;
-}
 
 a {
     text-decoration: none;
@@ -367,10 +383,6 @@ li {
     list-style: none;
 }
 
-
-body {
-    background-color: lightgray;
-}
 .qube_icons span {
     font-weight: bold;
     
@@ -452,8 +464,8 @@ body {
    
     position: relative;
     
-    width: 850px;
-    height: 850px;
+    max-width: 85%;
+    height: auto;
 
     border-radius: 5%;
 
