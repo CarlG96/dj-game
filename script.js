@@ -140,3 +140,21 @@ const startGame = (num) => {
         }
     }, 1500)
 }
+
+//hotkeys
+
+
+hotkeys('q', () => onPress('q', 'audioQ'));
+hotkeys('w', () => onPress('w', 'audioW'));
+hotkeys('e', () => onPress('e', 'audioE'));
+hotkeys('r', () => onPress('r', 'audioR'));
+hotkeys('a', () => onPress('a', 'audioA'));
+hotkeys('s', () => onPress('s', 'audioS'));
+hotkeys('d', () => onPress('d', 'audioD'));
+hotkeys('f', () => onPress('f', 'audioF'));
+hotkeys('z', () => onPress('z', 'audioZ'));
+hotkeys('x', () => onPress('x', 'audioX'));
+hotkeys('c', () => onPress('c', 'audioC'));
+hotkeys('v', () => onPress('v', 'audioV'));
+
+
