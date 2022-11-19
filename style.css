@@ -284,6 +284,7 @@
     padding-top: 1.5rem;
     margin-top: 1.5rem;
     height: 110px;
+    cursor: pointer;
 }
 
 /* for instructions button */

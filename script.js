@@ -56,46 +56,9 @@ const keymap = {
     86: "v"
 }
 
-// const keys = document.querySelectorAll(".key");
-// keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
-// function removeTransition(event) {
-    
-//      this.classList.remove('press');
-//   }
-
-//   function buttonHandler (key) {
-//     play(key);
-//   }
-
-//   function play(key) {
-//     var keyElement = document.querySelector(`.key[id="${key}"]`); 
-//     var audioElement = document.querySelector(`audio[data-key="${key}"]`);
-    
-//     keyElement.classList.add('press');
-//     audioElement.currentTime = 0;
-//     audioElement.play();
-//     setInterval(() => {
-//         keyElement.classList.remove('press');
-//     }, 200)
-// }
-
-// window.onkeydown = (event) => {
-//     var key = keymap[event.keyCode];
-//     if (key) {
-//       play(key);
-//     }
-//   }
-
-// // Main song on load 
-
-// window.onload= function (){
-//     document.getElementById("songload").play();
-//   }
-
 // Game Logic 
 
-const letterArray = ['q', 'w', 'e', 'r'];
+const letterArray = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v'];
 const playerArray = [];
 const gameArray = [];
 
@@ -117,7 +80,7 @@ const onPress = (key, audio) => {
 
 const startGame = () => {
     for (let i = 0; i < 5; i++ ) {
-        let choose = Math.floor(Math.random() * 4);
+        let choose = Math.floor(Math.random() * 12);
         gameArray[i] = letterArray[choose];
         console.log(gameArray);
     }
@@ -145,143 +108,3 @@ const startGame = () => {
         }
     }, 3000)
 }
-
-
-
-
-
-
-
-
-
-// circle sounds
-
-$("#button1").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
-    }
-    audio.currentTime = 2;
-    audio.play();
-});
-
-$("#button2").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-
-});
-
-$("#button3").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button4").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button5").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button6").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button7").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button8").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button9").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button10").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button11").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button12").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button13").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-
-$("#button14").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button15").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button16").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});

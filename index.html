@@ -190,7 +190,7 @@
                     <button
                       class="square button color-change key"
                       id="a"
-                      onclick="startGame()"
+                      onclick="onPress('a', 'audioA')"
                     >
                       A
                     </button>
@@ -199,7 +199,7 @@
                     <button
                       class="square button color-change key"
                       id="s"
-                      onclick="buttonHandler('s')"
+                      onclick="onPress('s', 'audioS')"
                     >
                       S
                     </button>
@@ -208,7 +208,7 @@
                     <button
                       class="square button color-change key"
                       id="d"
-                      onclick="buttonHandler('d')"
+                      onclick="onPress('d', 'audioD')"
                     >
                       D
                     </button>
@@ -217,7 +217,7 @@
                     <button
                       class="square button color-change key"
                       id="f"
-                      onclick="buttonHandler('f')"
+                      onclick="onPress('f', 'audioF')"
                     >
                       F
                     </button>
@@ -234,7 +234,7 @@
                     <button
                       class="square button color-change key"
                       id="z"
-                      onclick="buttonHandler('z')"
+                      onclick="onPress('z', 'audioZ')"
                     >
                       Z
                     </button>
@@ -243,7 +243,7 @@
                     <button
                       class="square button color-change key"
                       id="x"
-                      onclick="buttonHandler('x')"
+                      onclick="onPress('x', 'audioX')"
                     >
                       X
                     </button>
@@ -252,7 +252,7 @@
                     <button
                       class="square button color-change key"
                       id="c"
-                      onclick="buttonHandler('c')"
+                      onclick="onPress('c', 'audioC')"
                     >
                       C
                     </button>
@@ -261,7 +261,7 @@
                     <button
                       class="square button color-change key"
                       id="v"
-                      onclick="buttonHandler('v')"
+                      onclick="onPress('v', 'audioV')"
                     >
                       V
                     </button>
@@ -288,7 +288,7 @@
                         </button>
                     </div>
                     <div class="col-3">
-                        <div class="funky-animation restart">
+                        <div class="funky-animation restart" onclick="startGame()">
                       <p>Restart Game</p>
                       </div>
                     </div>
