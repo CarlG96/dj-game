@@ -43,6 +43,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
+
+          <!-- Sound track on load -->
+
+          <audio src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3" id="songload" loop="loop" autoplay="autoplay" muted="muted"></audio>
+
           <div>
             <!-- bg animation -->
             <div class="light x1"></div>
@@ -141,7 +146,7 @@
                         <button
                         class="square button color-change key"
                         id="q"
-                        onclick="buttonHandler('q')"
+                        onclick="game()"
                         >
                         Q
                         </button>
@@ -150,7 +155,7 @@
                         <button
                         class="square button color-change key"
                         id="w"
-                        onclick="buttonHandler('w')"
+                        onclick="game()"
                         >
                         W
                         </button>
@@ -159,7 +164,7 @@
                         <button
                         class="square button color-change key"
                         id="e"
-                        onclick="buttonHandler('e')"
+                        onclick="game()"
                         >
                       E
                         </button>
@@ -168,7 +173,7 @@
                         <button
                         class="square button color-change key"
                         id="r"
-                        onclick="buttonHandler('r')"
+                        onclick="game()"
                         >
                       R
                         </button>
@@ -271,7 +276,9 @@
                 <div class="row ms-2">
                     
                     <div class="col-3">
+
                         <!--Modal button-->
+
                         <button
                             class="funky-animation instructions"
                             data-bs-toggle="modal"
@@ -315,7 +322,7 @@
                         <div class="modal-body">
     <!-- Instructions-->
 
-    <p>How long can you keep up with the musical DJ beat?</p>
+                            <p>How long can you keep up with the musical DJ beat?</p>
 
                             <p>A sequence will show on the deck, after it is ended follow the sequences and play the
                                 same musical beat.
@@ -325,8 +332,7 @@
 
                             <p>See your score increase with each beat sequence. <strong> Where will you end up on our
                                     leaderboard?</strong></p>
-                            <button id="start-game" class=" hvr-grow p-2" type="button" data-bs-dismiss="modal"
-                                aria-label="Close">Start Game</button>
+                            <button id="start-game" class="hvr-grow p-2" type="button" onclick="startGame()">Start Game</button>
                         </div>
                     </div>
                 </div>

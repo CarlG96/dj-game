@@ -1,5 +1,5 @@
-const popup = document.getElementById('instruc-popup');
 const startButton = document.getElementById('start-game');
+const module = document.getElementById('reg-modal');
 const audioQ = document.getElementById('audioQ');
 const audioW = document.getElementById('audioW');
 const audioE = document.getElementById('audioE');
@@ -25,14 +25,12 @@ const audio = document.createElement('audio');
 
 // });
 
-
-
-
-startButton.addEventListener('click', startGame);
-
+// startButton.addEventListener('click', startGame);
 
 function startGame() {
-    popup.classList.add('hide');
+    module.classList.add('hide')
+    // starts key sequence
+    keyGen()
 }
 
 scoreCounter = document.getElementById('score-counter');
@@ -66,39 +64,78 @@ const keymap = {
     86: "v"
 }
 
-const keys = document.querySelectorAll(".key");
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+// const keys = document.querySelectorAll(".key");
+// keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
-function removeTransition(event) {
+// function removeTransition(event) {
     
-     this.classList.remove('press');
+//      this.classList.remove('press');
+//   }
+
+//   function buttonHandler (key) {
+//     play(key);
+//   }
+
+//   function play(key) {
+//     var keyElement = document.querySelector(`.key[id="${key}"]`); 
+//     var audioElement = document.querySelector(`audio[data-key="${key}"]`);
+    
+//     keyElement.classList.add('press');
+//     audioElement.currentTime = 0;
+//     audioElement.play();
+//     setInterval(() => {
+//         keyElement.classList.remove('press');
+//     }, 200)
+// }
+
+// window.onkeydown = (event) => {
+//     var key = keymap[event.keyCode];
+//     if (key) {
+//       play(key);
+//     }
+//   }
+
+// Main song on load 
+
+window.onload= function (){
+    document.getElementById("my_audio").play();
   }
 
-  function buttonHandler (key) {
-    play(key);
-  }
+// Game Logic 
 
-  function play(key) {
-    var keyElement = document.querySelector(`.key[id="${key}"]`); 
-    var audioElement = document.querySelector(`audio[data-key="${key}"]`);
+let keyButton = ["q", "w", "e", "r"] // add hotkeys here
+let sequence = [];
+
+function to_sequence() {
+    let choose = Math.floor(Math.round() * 4);
+    document.getElementById(keyButton[choose]).classList.add('add');
     
-    keyElement.classList.add('press');
-    audioElement.currentTime = 0;
-    audioElement.play();
-    setInterval(() => {
-        keyElement.classList.remove('press');
-    }, 200)
+    console.log('we are cooking');
+
+    setTimeout( () => {
+        document.getElementById(keyButton[choose]).classList.remove('add');
+    }, 300);
 }
 
-window.onkeydown = (event) => {
-    var key = keymap[event.keyCode];
-    if (key) {
-      play(key);
+const press = 0;
+
+function game(){
+    if(document.activeElement.id==store[press]) {
+        if(press == store.length-1) {
+            console('correct')
+            sequence();
+        }
+        else {
+            press++
+            console.log('im adding to sequence')
+        }
     }
-  }
+    else {
+        alert('Your Failed');
 
-
-
+        // game restart function here 
+    }
+}
 
 
 
