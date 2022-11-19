@@ -51,116 +51,59 @@ hotkeys('space', () => {
 
 // onclick events on gameButtons referenced in html
 
-const pressQ = () => {
-    audioQ.play();
-    gameButtons[0].classList.add('press');
-    setTimeout(() => {
-        gameButtons[0].classList.remove('press');
-    }, 100);
+const keymap = {
+    81: "q",
+    87: "w",
+    69: "e",
+    82: "r",
+    65: "a",
+    83: "s",
+    68: "d",
+    70: "f",
+    90: "z",
+    88: "x",
+    67: "c",
+    86: "v"
 }
 
-const pressW = () => {
-    audioW.play();
-    gameButtons[1].classList.add('press');
-    setTimeout(() => {
-        gameButtons[1].classList.remove('press');
-    }, 100);
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+function removeTransition(event) {
+    
+     this.classList.remove('press');
+  }
+
+  function buttonHandler (key) {
+    play(key);
+  }
+
+  function play(key) {
+    var keyElement = document.querySelector(`.key[id="${key}"]`); 
+    var audioElement = document.querySelector(`audio[data-key="${key}"]`);
+    
+    keyElement.classList.add('press');
+    audioElement.currentTime = 0;
+    audioElement.play();
+    setInterval(() => {
+        keyElement.classList.remove('press');
+    }, 200)
 }
 
-const pressE = () => {
-    audioE.play();
-    gameButtons[2].classList.add('press');
-    setTimeout(() => {
-        gameButtons[2].classList.remove('press');
-    }, 100);
-}
+window.onkeydown = (event) => {
+    var key = keymap[event.keyCode];
+    if (key) {
+      play(key);
+    }
+  }
 
-const pressR = () => {
-    audioR.play();
-    gameButtons[3].classList.add('press');
-    setTimeout(() => {
-        gameButtons[3].classList.remove('press');
-    }, 100);
-}
 
-const pressA = () => {
-    audioA.play();
-    gameButtons[4].classList.add('press');
-    setTimeout(() => {
-        gameButtons[4].classList.remove('press');
-    }, 100);
-}
 
-const pressS = () => {
-    audioS.play();
-    gameButtons[5].classList.add('press');
-    setTimeout(() => {
-        gameButtons[5].classList.remove('press');
-    }, 100);
-}
 
-const pressD = () => {
-    audioD.play();
-    gameButtons[6].classList.add('press');
-    setTimeout(() => {
-        gameButtons[6].classList.remove('press');
-    }, 100);
-}
 
-const pressF = () => {
-    audioF.play();
-    gameButtons[7].classList.add('press');
-    setTimeout(() => {
-        gameButtons[7].classList.remove('press');
-    }, 100);
-}
 
-const pressZ = () => {
-    audioZ.play();
-    gameButtons[8].classList.add('press');
-    setTimeout(() => {
-        gameButtons[8].classList.remove('press');
-    }, 100);
-}
 
-const pressX = () => {
-    audioX.play();
-    gameButtons[9].classList.add('press');
-    setTimeout(() => {
-        gameButtons[9].classList.remove('press');
-    }, 100);
-}
 
-const pressC = () => {
-    audioC.play();
-    gameButtons[10].classList.add('press');
-    setTimeout(() => {
-        gameButtons[10].classList.remove('press');
-    }, 100);
-}
-
-const pressV = () => {
-    audioV.play();
-    gameButtons[11].classList.add('press');
-    setTimeout(() => {
-        gameButtons[11].classList.remove('press');
-    }, 100);
-}
-
-//Hotkeys for calling onclick events above
-
-hotkeys('q', () => pressQ());
-hotkeys('w', () => pressW());
-hotkeys('e', () => pressE());
-hotkeys('r', () => pressR());
-hotkeys('a', () => pressA());
-hotkeys('s', () => pressS());
-hotkeys('d', () => pressD());
-hotkeys('f', () => pressF());
-hotkeys('z', () => pressZ());
-hotkeys('x', () => pressX());
-hotkeys('c', () => pressC());
-hotkeys('v', () => pressV());
 
 
 
