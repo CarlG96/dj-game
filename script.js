@@ -94,7 +94,6 @@ const onPress = (key, audio) => {
         round = 1;
         removeScore();
         return null;
-        console.log('you failed');
     }
 
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
@@ -139,5 +138,5 @@ const startGame = (num) => {
             clearInterval(gameArraySequencePlay);
             console.log(gameArray);
         }
-    }, 3000)
+    }, 2000)
 }
