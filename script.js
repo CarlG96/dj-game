@@ -26,128 +26,138 @@ let good;
 let compTurn;
 let intervalId;
 let noise = true;
-let on = false;
+let on = true;
 let win = true;
 
-function clearColor(){
+function clearColor() {
 
 }
 
-function one(){
-    if(noise){
+function one() {
+    if (noise) {
         audioQ.play()
     }
     noise = true;
     buttonHandler('q')
 };
-function two(){
-    if(noise){
+
+function two() {
+    if (noise) {
         audioW.play()
     }
     noise = true;
     buttonHandler('w')
 
 };
-function three(){
-    if(noise){
+
+function three() {
+    if (noise) {
         audioE.play()
     }
     noise = true;
     buttonHandler('e')
 };
 
-function four(){
-    if(noise){
+function four() {
+    if (noise) {
         audioR.play()
     }
     noise = true;
     buttonHandler('r')
 
 };
-function five(){
-    if(noise){
+
+function five() {
+    if (noise) {
         audioA.play()
     }
     noise = true;
     buttonHandler('a')
 };
-function six(){
-    if(noise){
+
+function six() {
+    if (noise) {
         audioS.play()
     }
     noise = true;
     buttonHandler('s')
 };
-function seven(){
-    if(noise){
+
+function seven() {
+    if (noise) {
         audioD.play()
     }
     noise = true;
     buttonHandler('d')
 };
-function eight(){
-    if(noise){
+
+function eight() {
+    if (noise) {
         audioF.play()
     }
     noise = true;
     buttonHandler('f')
 };
-function nine(){
-    if(noise){
+
+function nine() {
+    if (noise) {
         audioZ.play()
     }
     noise = true;
     buttonHandler('z')
 };
-function ten(){
-    if(noise){
+
+function ten() {
+    if (noise) {
         audioX.play()
     }
     noise = true;
     buttonHandler('x')
 };
-function eleven(){
-    if(noise){
+
+function eleven() {
+    if (noise) {
         audioC.play()
     }
     noise = true;
     buttonHandler('c')
 };
-function twelve(){
-    if(noise){
+
+function twelve() {
+    if (noise) {
         audioV.play()
     }
     noise = true;
     buttonHandler('v')
 };
 
-function gameTurn(){
+function gameTurn() {
     on = false
-    if(flash == turn){
+    if (flash == turn) {
         clearInterval(intervalId);
         compTurn = false;
         on = true;
     }
-    if(compTurn){
-        setTimeout(()=>{
-            if(order[flash] == 1) one();
-            if(order[flash] == 2) two();
-            if(order[flash] == 3) three();
-            if(order[flash] == 4) four();
-            if(order[flash] == 5) five();
-            if(order[flash] == 6) six();
-            if(order[flash] == 7) seven();
-            if(order[flash] == 8) eight();
-            if(order[flash] == 9) nine();
-            if(order[flash] == 10) ten();
-            if(order[flash] == 11) eleven();
-            if(order[flash] == 12) twelve();
-            flash++; 
+    if (compTurn) {
+        setTimeout(() => {
+            if (order[flash] == 1) one();
+            if (order[flash] == 2) two();
+            if (order[flash] == 3) three();
+            if (order[flash] == 4) four();
+            if (order[flash] == 5) five();
+            if (order[flash] == 6) six();
+            if (order[flash] == 7) seven();
+            if (order[flash] == 8) eight();
+            if (order[flash] == 9) nine();
+            if (order[flash] == 10) ten();
+            if (order[flash] == 11) eleven();
+            if (order[flash] == 12) twelve();
+            flash++;
         }, 200)
     }
 }
 
-function playGame(){
+function playGame() {
     win = false;
     order = []
     playerOrder = []
@@ -156,26 +166,26 @@ function playGame(){
     turn = 1
     scoreCounter.innerText = 1;
     good = true
-    for(var i=0 ; i < turn ;i++){
+    for (var i = 0; i < turn; i++) {
         order.push(Math.floor(Math.random() * 12 + 1))
     }
-    compTurn= true
+    compTurn = true
     intervalId = setInterval(gameTurn, 800)
 
 }
 
-startButton.addEventListener('click', (event) =>{
+startButton.addEventListener('click', (event) => {
     order = []
     playerOrder = []
     turn = 0
     on = true
     win = true
-    if(win){
+    if (win) {
         playGame();
     };
 })
 
-restartButton.addEventListener('click', (event) =>{
+restartButton.addEventListener('click', (event) => {
     order = []
     playerOrder = []
     turn = 0
@@ -183,7 +193,7 @@ restartButton.addEventListener('click', (event) =>{
     on = true
     win = true
     clearInterval(intervalId)
-    if(win){
+    if (win) {
         playGame();
     };
 })
@@ -243,16 +253,16 @@ const keys = document.querySelectorAll(".key");
 keys.forEach(key => key.addEventListener('transition', removeTransition));
 
 function removeTransition(event) {
-    
-     this.classList.remove('press');
-  }
 
-  function buttonHandler (key) {
+    this.classList.remove('press');
+}
+
+function buttonHandler(key) {
     play(key);
-  }
+}
 
-  function play(key) {
-    var keyElement = document.querySelector(`.key[id="${key}"]`); 
+function play(key) {
+    var keyElement = document.querySelector(`.key[id="${key}"]`);
     var audioElement = document.querySelector(`audio[data-key="${key}"]`);
     keyElement.classList.add('press');
     audioElement.currentTime = 0;
