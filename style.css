@@ -3,10 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 * {
     margin: 0;
     padding: 0;
+    margin: 10px;
+    border: none;
 }
 --root {
     --red: #f43545;
@@ -30,12 +33,7 @@ body {
     background-color: lightgray;
 }
 
-/*imports */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-
 /* Logo */
-
 .logo h2 {
     font-weight: bold;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -46,8 +44,6 @@ body {
     border: ridge 3px white;
     border-radius: 25%;
 }
-
-
 
 /*Pop-up*/
 
@@ -88,7 +84,6 @@ body {
     display: none;
 }
 /* Animation for BG */
-
 
 .light {
     z-index: 0;
@@ -244,16 +239,6 @@ body {
     100%{top: -100vh; opacity: 0;}
   }
 
-/* Background colour change */
-
-* {
-    margin: 0;
-    padding: 0;
-    margin: 10px;
-    padding: 0;
-    border: none;
-}
-
 /* Colors */
 
 --root {
@@ -326,8 +311,6 @@ body {
     position: static;
 }
 
-
-
 @keyframes hover-score{
     0%{
         border-radius: 6rem;
@@ -352,14 +335,7 @@ body {
     }
 }
 
-
 /* Dj box */
-
-/* * {
-    margin: 10px;
-    padding: 0;
-    border: none;
-} */
 
 a {
     text-decoration: none;
@@ -371,13 +347,8 @@ li {
     list-style: none;
 }
 
-
-body {
-    background-color: lightgray;
-}
 .qube_icons span {
     font-weight: bold;
-    
 }
 
 .qube .qube_elements_box .qube_icons .border {
@@ -451,13 +422,10 @@ body {
 
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     
-    
-    
-   
     position: relative;
     
-    width: 850px;
-    height: 850px;
+    max-width: 85%;
+    height: 90vh;
 
     border-radius: 5%;
 
@@ -473,7 +441,6 @@ body {
     display: flex;
     color: white;
     font-weight: bold;
-
 }
 
 /* circles at the top */
@@ -481,7 +448,6 @@ body {
     height: 70px;
     padding-left: 12px;
 }
-
 
 .qube .qube_circles_top .circle_top {
     width: 55px;
@@ -526,15 +492,10 @@ body {
 .qube .main_buttons .square {
     width: 120px;
     height: 120px;
-
     
-    
-    
-    /* background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%); */
     display: inline-block;
     cursor: pointer;
     border-radius: 5px;
-
 }
 
 .qube .main_buttons .main_buttons_text_l {
@@ -558,8 +519,6 @@ body {
     background-color:rgba(251, 192, 147);
     border: 5px solid orange;
     border-radius: 5px;
-    
-
 }
 
 /* circle at the right corner */
@@ -568,16 +527,12 @@ body {
    float: right;
    height: 670px;
    width: 162px;
-  
-    
 }
-
 
 .qube .main_buttons .qube_area_right .qube_area_right_circles {
     float: left;
     width: 40%;
     height: 650px;
-    
 }
 
 .qube .main_buttons .qube_area_right .qube_area_right_elements {
@@ -591,7 +546,6 @@ body {
     display: block;
     text-align: center;
 
-   
     font-size: small;
 }
 
@@ -606,8 +560,6 @@ body {
 }
 
 /* hover */
-
-
 .button:active {
     border-top: 1px solid #777;
     border-left: 1px solid #999;
@@ -654,7 +606,6 @@ body {
 .note-position-6 {
     top: 250px;
     right: 80px;
-
 }
 
 .note-position-7 {
@@ -677,7 +628,6 @@ body {
 .note-position-10 {
     top: 750px;
     right: 160px;
-
 }
 
 .note-position-11 {
@@ -690,8 +640,6 @@ body {
     right: 290px;
     color: white;
 }
-
-
 
 .animation-delay-1 {
     animation-delay: 2s;
