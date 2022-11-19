@@ -62,6 +62,7 @@ const letterArray = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v']
 const playerArray = [];
 const gameArray = [];
 let playerIndex = 0;
+let round = 1; 
 
 const onPress = (key, audio) => {
     let keyElement = document.getElementById(key);
@@ -71,29 +72,37 @@ const onPress = (key, audio) => {
 
     audioElement.currentTime = 0;
         audioElement.play();
-        setInterval(() => {
+        setTimeout(() => {
             keyElement.classList.remove('press');
         }, 200)
 
     playerArray.push(key);
-    console.log(playerArray);
 
     if (playerArray[playerIndex] === gameArray[playerIndex]) {
         ++playerIndex;
     } else {
         playerArray.length = 0;
         gameArray.length = 0;
+        playerIndex = 0;
+        round = 1;
         console.log('you failed')
     }
 
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
-        console.log('you won');
-    }
+        console.log(playerArray);
+        playerIndex = 0;
+        ++round;
+        addScore();
+        startGame(round);
+    } 
 
 }
 
 const startGame = (num) => {
-    for (let i = 0; i < num; i++ ) {
+
+    playerArray.length = 0; 
+
+    for (let i = num-1; i < num; i++ ) {
         let choose = Math.floor(Math.random() * 12);
         gameArray[i] = letterArray[choose];
         console.log(gameArray);
