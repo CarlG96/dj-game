@@ -316,14 +316,16 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     background-color: #000000;
-    color: #f43545;   
+    color: #00ba71;   
     animation: hover-score 2s infinite;
     float: right;
     position: static;
 }
 
+/* for restart button */
 .restart {
     text-align: center;
+    color: #00ba71;
     float: none;
     margin-left: 0;
     animation: none;
@@ -331,12 +333,25 @@ body {
     height: 110px;
 }
 
+/* for instructions button */
+.instructions {
+    height: auto;
+    width: auto;
+    animation: none;
+    text-align: center;
+    border-color: #000000;
+    color: #00ba71;
+    border-radius: 20%;
+    padding: 1.5rem;
+    margin-left: 4rem;
+}
+
 
 
 @keyframes hover-score{
     0%{
         border-radius: 6rem;
-        color:#f43545;
+        color:#00ba71;
     }
     25%{
         border-top-right-radius: 2rem;
@@ -353,7 +368,7 @@ body {
     }
     100%{
         border-radius: 6rem;
-        color:#f43545;
+        color:#00ba71;
     }
 }
 
