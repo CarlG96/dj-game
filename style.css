@@ -363,7 +363,6 @@ a {
     position: relative;
     
     width: calc((100vw/10)*9);
-    height: calc(100vh - 200px);
     border-radius: 4%;
 }
 
