@@ -49,104 +49,120 @@ hotkeys('space', () => {
     mainSong.play();
 })
 
-//button press functions, should be made into single function instead of twelve
+// onclick events on gameButtons referenced in html
 
-hotkeys('q', () => {
+const pressQ = () => {
     audioQ.play();
     gameButtons[0].classList.add('press');
     setTimeout(() => {
         gameButtons[0].classList.remove('press');
     }, 100);
+}
 
-})
-
-hotkeys('w', () => {
+const pressW = () => {
     audioW.play();
     gameButtons[1].classList.add('press');
     setTimeout(() => {
         gameButtons[1].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('e', () => {
+const pressE = () => {
     audioE.play();
     gameButtons[2].classList.add('press');
     setTimeout(() => {
         gameButtons[2].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('r', () => {
+const pressR = () => {
     audioR.play();
     gameButtons[3].classList.add('press');
     setTimeout(() => {
         gameButtons[3].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('a', () => {
+const pressA = () => {
     audioA.play();
     gameButtons[4].classList.add('press');
     setTimeout(() => {
         gameButtons[4].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('s', () => {
+const pressS = () => {
     audioS.play();
     gameButtons[5].classList.add('press');
     setTimeout(() => {
         gameButtons[5].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('d', () => {
+const pressD = () => {
     audioD.play();
     gameButtons[6].classList.add('press');
     setTimeout(() => {
         gameButtons[6].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('f', () => {
+const pressF = () => {
     audioF.play();
     gameButtons[7].classList.add('press');
     setTimeout(() => {
         gameButtons[7].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('z', () => {
+const pressZ = () => {
     audioZ.play();
     gameButtons[8].classList.add('press');
     setTimeout(() => {
         gameButtons[8].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('x', () => {
+const pressX = () => {
     audioX.play();
     gameButtons[9].classList.add('press');
     setTimeout(() => {
         gameButtons[9].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('c', () => {
+const pressC = () => {
     audioC.play();
     gameButtons[10].classList.add('press');
     setTimeout(() => {
         gameButtons[10].classList.remove('press');
     }, 100);
-})
+}
 
-hotkeys('v', () => {
+const pressV = () => {
     audioV.play();
     gameButtons[11].classList.add('press');
     setTimeout(() => {
         gameButtons[11].classList.remove('press');
     }, 100);
-})
+}
+
+//Hotkeys for calling onclick events above
+
+hotkeys('q', () => pressQ());
+hotkeys('w', () => pressW());
+hotkeys('e', () => pressE());
+hotkeys('r', () => pressR());
+hotkeys('a', () => pressA());
+hotkeys('s', () => pressS());
+hotkeys('d', () => pressD());
+hotkeys('f', () => pressF());
+hotkeys('z', () => pressZ());
+hotkeys('x', () => pressX());
+hotkeys('c', () => pressC());
+hotkeys('v', () => pressV());
+
+
 
 // circle sounds
 

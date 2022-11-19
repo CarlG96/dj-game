@@ -731,3 +731,8 @@ body {
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
+
+/* For the gameButtons to work without overlapping eachother */
+button {
+    margin:10px;
+}
