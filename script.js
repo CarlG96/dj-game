@@ -1,5 +1,5 @@
 const startButton = document.getElementById('start-game');
-const module = document.getElementById('reg-modal');
+const module = document.getElementById('instructions');
 const audioQ = document.getElementById('audioQ');
 const audioW = document.getElementById('audioW');
 const audioE = document.getElementById('audioE');
@@ -28,9 +28,9 @@ const audio = document.createElement('audio');
 // startButton.addEventListener('click', startGame);
 
 function startGame() {
-    module.classList.add('hide')
+    module.classList.add('hide');
     // starts key sequence
-    keyGen()
+    to_sequence()
 }
 
 scoreCounter = document.getElementById('score-counter');
@@ -43,9 +43,9 @@ const addScore = () => {
 
 //hotkey functions
 
-hotkeys('space', () => {
-    mainSong.play();
-})
+// hotkeys('space', () => {
+//     mainSong.play();
+// })
 
 // onclick events on gameButtons referenced in html
 
@@ -95,25 +95,25 @@ const keymap = {
 //     }
 //   }
 
-// Main song on load 
+// // Main song on load 
 
-window.onload= function (){
-    document.getElementById("my_audio").play();
-  }
+// window.onload= function (){
+//     document.getElementById("songload").play();
+//   }
 
 // Game Logic 
 
-let keyButton = ["q", "w", "e", "r"] // add hotkeys here
+let keyButton = ["q", "w", "e", "r"]; // add hotkeys here
 let sequence = [];
 
 function to_sequence() {
-    let choose = Math.floor(Math.round() * 4);
-    document.getElementById(keyButton[choose]).classList.add('add');
+    let choose = Math.floor(Math.random() * 4);
+    document.getElementById(keyButton[choose]).classList.add('press');
     
     console.log('we are cooking');
 
     setTimeout( () => {
-        document.getElementById(keyButton[choose]).classList.remove('add');
+        document.getElementById(keyButton[choose]).classList.remove('press');
     }, 300);
 }
 
@@ -135,6 +135,7 @@ function game(){
 
         // game restart function here 
     }
+    return;
 }
 
 
