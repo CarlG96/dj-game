@@ -43,6 +43,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
+
+          <!-- Sound track on load -->
+
+          <audio src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3" id="songload" loop="loop" autoplay="autoplay" muted="muted"></audio>
+
           <div>
             <!-- bg animation -->
             <div class="light x1"></div>
@@ -146,7 +151,7 @@
                         <button
                         class="square button color-change key"
                         id="q"
-                        onclick="buttonHandler('q')"
+                        onclick="onPress('q', 'audioQ')"
                         >
                         Q
                         </button>
@@ -155,7 +160,7 @@
                         <button
                         class="square button color-change key"
                         id="w"
-                        onclick="buttonHandler('w')"
+                        onclick="onPress('w', 'audioW')"
                         >
                         W
                         </button>
@@ -164,7 +169,7 @@
                         <button
                         class="square button color-change key"
                         id="e"
-                        onclick="buttonHandler('e')"
+                        onclick="onPress('e', 'audioE')"
                         >
                       E
                         </button>
@@ -173,7 +178,7 @@
                         <button
                         class="square button color-change key"
                         id="r"
-                        onclick="buttonHandler('r')"
+                        onclick="onPress('r', 'audioR')"
                         >
                       R
                         </button>
@@ -190,7 +195,7 @@
                     <button
                       class="square button color-change key"
                       id="a"
-                      onclick="buttonHandler('a')"
+                      onclick="onPress('a', 'audioA')"
                     >
                       A
                     </button>
@@ -199,7 +204,7 @@
                     <button
                       class="square button color-change key"
                       id="s"
-                      onclick="buttonHandler('s')"
+                      onclick="onPress('s', 'audioS')"
                     >
                       S
                     </button>
@@ -208,7 +213,7 @@
                     <button
                       class="square button color-change key"
                       id="d"
-                      onclick="buttonHandler('d')"
+                      onclick="onPress('d', 'audioD')"
                     >
                       D
                     </button>
@@ -217,7 +222,7 @@
                     <button
                       class="square button color-change key"
                       id="f"
-                      onclick="buttonHandler('f')"
+                      onclick="onPress('f', 'audioF')"
                     >
                       F
                     </button>
@@ -234,7 +239,7 @@
                     <button
                       class="square button color-change key"
                       id="z"
-                      onclick="buttonHandler('z')"
+                      onclick="onPress('z', 'audioZ')"
                     >
                       Z
                     </button>
@@ -243,7 +248,7 @@
                     <button
                       class="square button color-change key"
                       id="x"
-                      onclick="buttonHandler('x')"
+                      onclick="onPress('x', 'audioX')"
                     >
                       X
                     </button>
@@ -252,7 +257,7 @@
                     <button
                       class="square button color-change key"
                       id="c"
-                      onclick="buttonHandler('c')"
+                      onclick="onPress('c', 'audioC')"
                     >
                       C
                     </button>
@@ -261,7 +266,7 @@
                     <button
                       class="square button color-change key"
                       id="v"
-                      onclick="buttonHandler('v')"
+                      onclick="onPress('v', 'audioV')"
                     >
                       V
                     </button>
@@ -276,7 +281,9 @@
                 <div class="row ms-2">
                     
                     <div class="col-3">
+
                         <!--Modal button-->
+
                         <button
                             class="funky-animation instructions"
                             data-bs-toggle="modal"
@@ -286,14 +293,14 @@
                         </button>
                     </div>
                     <div class="col-3">
-                        <div class="funky-animation restart">
+                        <div class="funky-animation restart" onclick="startGame(1)">
                       <p>Restart Game</p>
                       </div>
                     </div>
                     <div class="col-3">
                         <div class="funky-animation funk">
-                        <p>Score:<span id="score-counter"></p>
-                          <p>0</p>
+                        <p>Score: <span id="score-counter">0</span></p>
+                          
                         </div>
                     </div>
                     <div class="col-3">
@@ -317,10 +324,10 @@
                             <h5 class="modal-title" id="modal-title">IT'S DJ DECKING LARRY</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div id="instructions" class="modal-body">
     <!-- Instructions-->
 
-    <p>How long can you keep up with the musical DJ beat?</p>
+                            <p>How long can you keep up with the musical DJ beat?</p>
 
                             <p>A sequence will show on the deck, after it is ended follow the sequences and play the
                                 same musical beat.
@@ -330,8 +337,7 @@
 
                             <p>See your score increase with each beat sequence. <strong> Where will you end up on our
                                     leaderboard?</strong></p>
-                            <button id="start-game" class=" hvr-grow p-2" type="button" data-bs-dismiss="modal"
-                                aria-label="Close">Start Game</button>
+                            <button id="start-game" class="hvr-grow p-2" type="button" onclick="startGame(1)">Start Game</button>
                         </div>
                     </div>
                 </div>
