@@ -123,17 +123,26 @@ const startGame = () => {
     }
 
     let i = 0;
-    setInterval(() => {
-        let keyElement = document.getElementById(gameArray[i]);
-        keyElement.classList.add('press');
-        let audioElement = document.querySelector(`audio[data-key="${gameArray[i]}"]`);
+    const gameArraySequencePlay = setInterval(() => {
+        if (i < gameArray.length) {
+            let index = gameArray[i];
+            let keyElement = document.getElementById(index);
+            console.log(keyElement);
+            keyElement.classList.add('press');
+           
+            setTimeout(() => {
+                keyElement.classList.remove('press');
+            }, 1000);
 
-        audioElement.currentTime = 0;
-        audioElement.play();
-        setInterval(() => {
-            keyElement.classList.remove('press');
-        }, 200)
-        ++i;
+            let audioElement = document.querySelector(`audio[data-key="${gameArray[i]}"]`);
+
+            audioElement.currentTime = 0;
+            audioElement.play();
+            
+            ++i;
+        } else {
+            clearInterval(gameArraySequencePlay);
+        }
     }, 3000)
 }
 
