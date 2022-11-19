@@ -138,5 +138,5 @@ const startGame = (num) => {
             clearInterval(gameArraySequencePlay);
             console.log(gameArray);
         }
-    }, 2000)
+    }, 1000)
 }
