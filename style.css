@@ -322,6 +322,15 @@ body {
     position: static;
 }
 
+.restart {
+    text-align: center;
+    float: none;
+    margin-left: 0;
+    animation: none;
+    margin-top: 2.5rem;
+    height: 110px;
+}
+
 
 
 @keyframes hover-score{
