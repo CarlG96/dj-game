@@ -282,9 +282,9 @@
 
 /* for instructions button */
 .instructions {
-    height: 50vh;
-    width: auto;
+    height: 20vh;
     animation: none;
+    font-size: 1rem;
     text-align: center;
     border-color: #000000;
     color: #00ba71;
@@ -336,21 +336,17 @@ a {
 
     position: relative;
     
-    width: calc((100vw/12)*6);
-    height: 850px;
-
+    width: calc((100vw/10)*6);
+    height: calc(100vh - 200px);
     border-radius: 5%;
 }
 
 /* circles at the top */
-.qube .qube_circles_top {
-    height: 70px;
-    padding-left: 12px;
-}
 
-.qube .qube_circles_top .circle_top {
-    width: 55px;
-    height: 55px;
+
+.circle_top {
+    width: calc(100vw/20);
+    height: calc(100vw/20);
 
     border-radius: 50%;
     display: inline-block;
@@ -358,101 +354,23 @@ a {
     background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
 }
 
+@media (max-width: 1000px) {
+    .circle_top {
+    width: calc(100vw/25);
+    height: calc(100vw/25);
+    }
+}
+
 /* main buttons */
-.qube .main_buttons {
-    height: 690px;
-    padding-top: 4rem;
-    padding-left: 1rem;
-}
 
-.qube .main_buttons .main_buttons_square{
-    width: 75%;
-    float: left;
-    text-align: center;
-}
-
-.qube .main_buttons .square {
-    width: 120px;
-    height: 120px;
-
-    
-    
-    
-    /* background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%); */
+.square {
+    width: calc(100vw/13.8);
+    height: calc(100vh/8);
     display: inline-block;
     cursor: pointer;
     border-radius: 5px;
 
 }
-
-.qube .main_buttons .main_buttons_text_l {
-    text-transform: uppercase;
-    float: left;
-    font-weight: bold;
-    color: white;
-    font-size: x-large;
-}
-
-.qube .main_buttons .main_buttons_text_r {
-    text-transform: uppercase;
-    float: right;
-    font-weight: bolder;
-    color: orange;
-    font-size: x-large;
-}
-
-.qube .main_buttons .main_buttons_text_r span {
-    color:white;
-    background-color:rgba(251, 192, 147);
-    border: 5px solid orange;
-    border-radius: 5px;
-    
-
-}
-
-/* circle at the right corner */
-
-.qube .main_buttons .qube_area_right {
-   float: right;
-   height: 670px;
-   width: 162px;
-  
-    
-}
-
-
-.qube .main_buttons .qube_area_right .qube_area_right_circles {
-    float: left;
-    width: 40%;
-    height: 650px;
-    
-}
-
-.qube .main_buttons .qube_area_right .qube_area_right_elements {
-    float: right;
-    width: 45%;
-    height: 650px;
-
-    float: right;
-
-    margin: 5px auto;
-    display: block;
-    text-align: center;
-
-   
-    font-size: small;
-}
-
-.qube .main_buttons .qube_area_right .qube_area_right_circles .circle_right {
-    width: 54px;
-    height: 54px;
-
-    border-radius: 50%;
-    display: inline-block;
-    
-    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
-}
-
 /* hover */
 
 
@@ -586,5 +504,5 @@ a {
 
 /* For the gameButtons to work without overlapping eachother */
 button {
-    margin:10px;
+    
 }

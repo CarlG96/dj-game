@@ -42,10 +42,10 @@
   <body class="color-change">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2">
+        <div class="col-1">
           <!-- Modal button -->
           <div class="logo">
-            <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />ss
+            <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />
             <h2>DJ-GAME</h2>
           </div>
           <button
@@ -56,8 +56,8 @@
             Rules of the game
           </button>
         </div>
-        <div class="col-2"></div>
-        <div class="col-6">
+        <div class="col-1"></div>
+        <div class="col-7">
           <div>
             <!-- bg animation -->
             <div class="light x1"></div>
@@ -129,52 +129,63 @@
               <div class="qube">
                 <!-- circle at the top -->
                 <div class="qube_circles_top">
-                    <div class="funky-animation">
-                        <h2>Score:<span id="score-counter"> 0</span></h2>
-                      </div>
-                  <!-- <div class="circle_top button"></div>
+                    
                   <div class="circle_top button"></div>
                   <div class="circle_top button"></div>
                   <div class="circle_top button"></div>
                   <div class="circle_top button"></div>
                   <div class="circle_top button"></div>
                   <div class="circle_top button"></div>
-                  <div class="circle_top button"></div> -->
 
-                  
+                  <!-- <div class="funky-animation">
+                    <h2>Score:<span id="score-counter"> 0</span></h2>
+                  </div> -->
                 </div>
 
                 <!-- main buttons -->
-                <div class="main_buttons">
-                  <div class="main_buttons_square">
-                    <button
-                      class="square button color-change key"
-                      id="q"
-                      onclick="buttonHandler('q')"
-                    >
-                      Q
-                    </button>
-                    <button
-                      class="square button color-change key"
-                      id="w"
-                      onclick="buttonHandler('w')"
-                    >
-                      W
-                    </button>
-                    <button
-                      class="square button color-change key"
-                      id="e"
-                      onclick="buttonHandler('e')"
-                    >
+                <div class="row ms-3">
+                    <div class="col-2">
+                        <button
+                        class="square button color-change key"
+                        id="q"
+                        onclick="buttonHandler('q')"
+                        >
+                        Q
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button
+                        class="square button color-change key"
+                        id="w"
+                        onclick="buttonHandler('w')"
+                        >
+                        W
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button
+                        class="square button color-change key"
+                        id="e"
+                        onclick="buttonHandler('e')"
+                        >
                       E
-                    </button>
-                    <button
-                      class="square button color-change key"
-                      id="r"
-                      onclick="buttonHandler('r')"
-                    >
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button
+                        class="square button color-change key"
+                        id="r"
+                        onclick="buttonHandler('r')"
+                        >
                       R
-                    </button>
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <div class="circle_top button"></div>
+                    </div>
+                </div>
+                <div class="row ms-3">
+                    <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="a"
@@ -182,6 +193,8 @@
                     >
                       A
                     </button>
+                </div>
+                <div class=col-2>
                     <button
                       class="square button color-change key"
                       id="s"
@@ -189,6 +202,8 @@
                     >
                       S
                     </button>
+                </div>
+                <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="d"
@@ -196,6 +211,8 @@
                     >
                       D
                     </button>
+                </div>
+                <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="f"
@@ -203,6 +220,13 @@
                     >
                       F
                     </button>
+                </div>
+                <div class="col-2">
+                    <div class="circle_top button"></div>
+                </div>
+                </div>
+                <div class="row ms-3">
+                    <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="z"
@@ -210,6 +234,8 @@
                     >
                       Z
                     </button>
+                    </div>
+                    <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="x"
@@ -217,6 +243,8 @@
                     >
                       X
                     </button>
+                    </div>
+                    <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="c"
@@ -224,6 +252,8 @@
                     >
                       C
                     </button>
+                    </div>
+                    <div class="col-2">
                     <button
                       class="square button color-change key"
                       id="v"
@@ -231,32 +261,21 @@
                     >
                       V
                     </button>
-                    <div class="funky-animation restart">
+                </div>
+                <div class="col-2">
+                    <div class="circle_top button"></div>
+                </div>
+                </div>
+                    <!-- <div class="funky-animation restart">
                       <h2>Restart Game</h2>
-                    </div>
+                    </div> -->
+                </div>
                   </div>
-
-                  <!-- <div class="main_buttons_text">
-                                    <p>novatation</p>
-                                    <p>launchpad<span>s</span></p>
-                                </div> -->
-
-                  <!-- circles at the right corner -->
-                  <!-- <div class="qube_area_right">
-                    <div class="qube_area_right_circles">
-                      <div class="circle_right button"></div>
-                      <div class="circle_right button"></div>
-                      <div class="circle_right button"></div>
-                      <div class="circle_right button"></div>
-                      <div class="circle_right button"></div>
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-2"></div>
       </div>
     </div>
 
