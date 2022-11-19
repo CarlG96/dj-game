@@ -25,14 +25,6 @@ const audio = document.createElement('audio');
 
 // });
 
-// startButton.addEventListener('click', startGame);
-
-function startGame() {
-    module.classList.add('hide');
-    // starts key sequence
-    to_sequence()
-}
-
 scoreCounter = document.getElementById('score-counter');
 
 // function for adding score, currently unused
@@ -103,40 +95,48 @@ const keymap = {
 
 // Game Logic 
 
-let keyButton = ["q", "w", "e", "r"]; // add hotkeys here
-let sequence = [];
+const letterArray = ['q', 'w', 'e', 'r'];
+const playerArray = [];
+const gameArray = [];
 
-function to_sequence() {
-    let choose = Math.floor(Math.random() * 4);
-    document.getElementById(keyButton[choose]).classList.add('press');
-    
-    console.log('we are cooking');
+const onPress = (key, audio) => {
+    let keyElement = document.getElementById(key);
+    let audioElement = document.getElementById(audio);
 
-    setTimeout( () => {
-        document.getElementById(keyButton[choose]).classList.remove('press');
-    }, 300);
+    keyElement.classList.add('press');
+
+    audioElement.currentTime = 0;
+        audioElement.play();
+        setInterval(() => {
+            keyElement.classList.remove('press');
+        }, 200)
+
+    playerArray.push(key);
+    console.log(playerArray);
 }
 
-const press = 0;
-
-function game(){
-    if(document.activeElement.id==store[press]) {
-        if(press == store.length-1) {
-            console('correct')
-            sequence();
-        }
-        else {
-            press++
-            console.log('im adding to sequence')
-        }
+const startGame = () => {
+    for (let i = 0; i < 5; i++ ) {
+        let choose = Math.floor(Math.random() * 4);
+        gameArray[i] = letterArray[choose];
+        console.log(gameArray);
     }
-    else {
-        alert('Your Failed');
 
-        // game restart function here 
-    }
-    return;
+    let i = 0;
+    setInterval(() => {
+        let keyElement = document.getElementById(gameArray[i]);
+        keyElement.classList.add('press');
+        let audioElement = document.querySelector(`audio[data-key="${gameArray[i]}"]`);
+
+        audioElement.currentTime = 0;
+        audioElement.play();
+        setInterval(() => {
+            keyElement.classList.remove('press');
+        }, 200)
+        ++i;
+    }, 3000)
 }
+
 
 
 
