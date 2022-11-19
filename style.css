@@ -13,6 +13,7 @@ body {
     -moz-animation: fadeIn 1 1s ease-out;
     -o-animation: fadeIn 1 1s ease-out;
     animation: fadeIn 1 1s ease-out;
+    background-color: lightgray;
 }
 
 /*imports */
@@ -234,6 +235,9 @@ body {
 * {
     margin: 0;
     padding: 0;
+    margin: 10px;
+    padding: 0;
+    border: none;
 }
 
 /* Colors */
@@ -337,11 +341,11 @@ body {
 
 /* Dj box */
 
-* {
+/* * {
     margin: 10px;
     padding: 0;
     border: none;
-}
+} */
 
 a {
     text-decoration: none;
