@@ -25,7 +25,6 @@ window.addEventListener('mousemove', function (e) {
 
 });
 
-window.onload = popup
 
 
 
