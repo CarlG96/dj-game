@@ -33,6 +33,10 @@ const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
 }
 
+const removeScore = () => {
+    scoreCounter.innerText = 0;
+}
+
 //hotkey functions
 
 // hotkeys('space', () => {
@@ -81,11 +85,16 @@ const onPress = (key, audio) => {
     if (playerArray[playerIndex] === gameArray[playerIndex]) {
         ++playerIndex;
     } else {
+        
+        // FAIL STATE
+
+        playerIndex = 0;
         playerArray.length = 0;
         gameArray.length = 0;
-        playerIndex = 0;
         round = 1;
-        console.log('you failed')
+        removeScore();
+        return null;
+        console.log('you failed');
     }
 
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
