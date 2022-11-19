@@ -376,11 +376,44 @@ a {
 
     border-radius: 50%;
     display: inline-block;
-
-    background-image: url(./assets/images/invis.png);
-    background-size: cover;
     animation: rotate 5s infinite;
     animation-timing-function: linear;
+}
+
+.carl-photo {
+    background-image: url(./assets/images/carl-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.justin-photo {
+    background-image: url(./assets/images/justin-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.keis-photo {
+    background-image: url(./assets/images/keis-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.christian-photo {
+    background-image: url(./assets/images/christian-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.denys-photo {
+    background-image: url(./assets/images/denys-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ronny-photo {
+    background-image: url(./assets/images/ronny-hackathon-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .rotation-1 {
@@ -389,7 +422,7 @@ a {
 }
 
 .rotation-2 {
-    animation: reverse-rotate 2s infinite;
+    animation: rotate 2s infinite;
     animation-timing-function: linear;
 }
 
