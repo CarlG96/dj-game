@@ -61,6 +61,7 @@ const keymap = {
 const letterArray = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v'];
 const playerArray = [];
 const gameArray = [];
+let playerIndex = 0;
 
 const onPress = (key, audio) => {
     let keyElement = document.getElementById(key);
@@ -76,10 +77,23 @@ const onPress = (key, audio) => {
 
     playerArray.push(key);
     console.log(playerArray);
+
+    if (playerArray[playerIndex] === gameArray[playerIndex]) {
+        ++playerIndex;
+    } else {
+        playerArray.length = 0;
+        gameArray.length = 0;
+        console.log('you failed')
+    }
+
+    if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
+        console.log('you won');
+    }
+
 }
 
-const startGame = () => {
-    for (let i = 0; i < 5; i++ ) {
+const startGame = (num) => {
+    for (let i = 0; i < num; i++ ) {
         let choose = Math.floor(Math.random() * 12);
         gameArray[i] = letterArray[choose];
         console.log(gameArray);
@@ -105,6 +119,7 @@ const startGame = () => {
             ++i;
         } else {
             clearInterval(gameArraySequencePlay);
+            console.log(gameArray);
         }
     }, 3000)
 }
