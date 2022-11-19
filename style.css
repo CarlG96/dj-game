@@ -1,39 +1,11 @@
 /*imports */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Monofett&family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
+
 * {
-    padding: 0;
-    margin: 10px;
-    border: none;
-}
---root {
-    --red: #f43545;
-    --orange: #fa8901;
-    --green: #00ba71;
-    --blue: #00c2de;
-    --violet: #5f2879;
-}
-body {
     margin: 0;
-    height: 100vh;
-    font-weight: 100;
-    -webkit-overflow-Y: hidden;
-    -moz-overflow-Y: hidden;
-    -o-overflow-Y: hidden;
-    overflow-y: hidden;
-    -webkit-animation: fadeIn 1 1s ease-out;
-    -moz-animation: fadeIn 1 1s ease-out;
-    -o-animation: fadeIn 1 1s ease-out;
-    animation: fadeIn 1 1s ease-out;
-    background-color: lightgray;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
 }
-
-/*imports */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 
 /* Logo */
 
@@ -47,9 +19,6 @@ body {
     border: ridge 3px white;
     border-radius: 25%;
 }
-
-
-
 /*Pop-up*/
 
 #instruc-popup {
@@ -67,7 +36,6 @@ body {
     animation: animate 4.5s ease infinite;
     border-radius: 5px;
     color: white;
-
 }
 
 #start-game:hover {
@@ -245,19 +213,6 @@ body {
     100%{top: -100vh; opacity: 0;}
   }
 
-/* Background colour change */
-
-
-/* Colors */
-
---root {
-    --red: #f43545;
-    --orange: #fa8901;
-    --green: #00ba71;
-    --blue: #00c2de;
-    --violet: #5f2879;
-}
-
 /* Color change class */
 .color-change {
     height: 100vh;
@@ -306,44 +261,62 @@ body {
 .funky-animation {
     border: 10px solid #f43545;
     border-radius: 6rem;
-    padding: 0.5rem;
-    text-align: right;
-    /* margin-left: 2rem; */
-    height: 70px;
-    width: 22rem;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
+    padding: 2.5rem;
+    text-align: center;
+    height: 100px;
+    width: calc(100vw/5);
+    font-size: 1rem;
     background-color: #000000;
     color: #00ba71;   
     animation: hover-score 2s infinite;
-    position: static;
+}
+
+.funk {
+    margin-top: 1.5rem;
+    padding-top: 10px;
 }
 
 /* for restart button */
 .restart {
     text-align: center;
     color: #00ba71;
-    float: none;
-    margin-left: 0;
-    animation: none;
-    margin-top: 2.5rem;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
     height: 110px;
 }
 
 /* for instructions button */
 .instructions {
-    height: auto;
-    width: auto;
-    animation: none;
+    margin-top: 10px;
+    height: 128px;
+    font-size: 1rem;
     text-align: center;
-    border-color: #000000;
     color: #00ba71;
     border-radius: 20%;
-    padding: 1.5rem;
-    /* margin-left: 4rem; */
 }
 
-
+/* media queries for funky animations */
+@media (max-width: 1700px){
+    .funky-animation{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 1600px){
+    .funky-animation{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 1300px){
+    .funky-animation{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 1000px){
+    .funky-animation{
+        font-size: 0.6rem;
+    }
+}
 
 @keyframes hover-score{
     0%{
@@ -369,131 +342,36 @@ body {
     }
 }
 
-
 /* Dj box */
 
+* {
+    margin: 10px;
+    padding: 0;
+    border: none;
+}
 
 a {
     text-decoration: none;
 }
 
-ul,
-ol,
-li {
-    list-style: none;
-}
-
-.qube_icons span {
-    font-weight: bold;
-    
-}
-
-.qube .qube_elements_box .qube_icons .border {
-   border-bottom: 2px solid white;
-   border-top: 2px solid white;
-}
-
-.border-orange{
-    background-color: orange;
-    width: 8%;
-    border-radius: 3px;
-    opacity: 0.7;
-}
-
-.border-orange-right {
-    background-color: orange;
-    width: 70%;
-    border-radius: 3px;
-    opacity: 0.7;
-}
-
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid white;
-}
-
-.arrow-left {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 15px solid white;
-}
-
-.arrow-right {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 15px solid white;
-}
-
-.arrow-right-r {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 15px solid white;
-    margin: 5px auto;
-}
-
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 15px solid white;
-}
 
 /* Main qube */
 .qube {
     
     background: linear-gradient(132deg, #838080, #353636, #010311);
-    background-size: 400% 400%;
-    animation: Gradient 15s ease infinite;
-    
-    overflow: hidden;
 
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    
-    
-    
-   
     position: relative;
     
-    max-width: 85%;
-    height: auto;
-
-    border-radius: 5%;
-
-    margin: 0 auto;
-}
-
-/* First elements at the top */
-.qube .qube_elements_box {
-    height: 40px;
-}
-
-.qube .qube_elements_box .qube_icons {
-    display: flex;
-    color: white;
-    font-weight: bold;
-
+    width: calc((100vw/10)*9);
+    border-radius: 4%;
 }
 
 /* circles at the top */
-.qube .qube_circles_top {
-    height: 70px;
-    padding-left: 12px;
-}
 
 
-.qube .qube_circles_top .circle_top {
-    width: 55px;
-    height: 55px;
+.circle_top {
+    width: calc(100vw/20);
+    height: calc(100vw/20);
 
     border-radius: 50%;
     display: inline-block;
@@ -501,118 +379,23 @@ li {
     background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
 }
 
-.qube .qube_circles_top .qube_text {
-    float: right;
-    display:inline-flex;
-    text-transform: uppercase;
-    color: white;
-}
-
-.qube .qube_circles_top .qube_text span{
-    font-weight: bold;
-    border-left: 2px solid white;
-
-    font-size: large;
+@media (max-width: 1000px) {
+    .circle_top {
+    width: calc(100vw/25);
+    height: calc(100vw/25);
+    }
 }
 
 /* main buttons */
-.qube .main_buttons {
-    height: 690px;
-    padding-top: 4rem;
-    padding-left: 1rem;
-}
 
-.qube .main_buttons .main_buttons_square{
-    width: 75%;
-    float: left;
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-}
-
-.qube .main_buttons .square {
-    width: 120px;
-    height: 120px;
-
-    
-    
-    
-    /* background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%); */
+.square {
+    width: calc(100vw/13.8);
+    height: calc(100vh/8);
     display: inline-block;
     cursor: pointer;
     border-radius: 5px;
 
 }
-
-.qube .main_buttons .main_buttons_text_l {
-    text-transform: uppercase;
-    float: left;
-    font-weight: bold;
-    color: white;
-    font-size: x-large;
-}
-
-.qube .main_buttons .main_buttons_text_r {
-    text-transform: uppercase;
-    float: right;
-    font-weight: bolder;
-    color: orange;
-    font-size: x-large;
-}
-
-.qube .main_buttons .main_buttons_text_r span {
-    color:white;
-    background-color:rgba(251, 192, 147);
-    border: 5px solid orange;
-    border-radius: 5px;
-    
-
-}
-
-/* circle at the right corner */
-
-.qube .main_buttons .qube_area_right {
-   float: right;
-   height: 670px;
-   width: 162px;
-  
-    
-}
-
-
-.qube .main_buttons .qube_area_right .qube_area_right_circles {
-    float: left;
-    width: 40%;
-    height: 650px;
-    
-}
-
-.qube .main_buttons .qube_area_right .qube_area_right_elements {
-    float: right;
-    width: 45%;
-    height: 650px;
-
-    float: right;
-
-    margin: 5px auto;
-    display: block;
-    text-align: center;
-
-   
-    font-size: small;
-}
-
-.qube .main_buttons .qube_area_right .qube_area_right_circles .circle_right {
-    width: 54px;
-    height: 54px;
-
-    border-radius: 50%;
-    display: inline-block;
-    
-    background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
-}
-
 /* hover */
 
 
@@ -744,7 +527,3 @@ li {
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-/* For the gameButtons to work without overlapping eachother */
-button {
-    margin:10px;
-}
