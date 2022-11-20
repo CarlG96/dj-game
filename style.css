@@ -19,6 +19,7 @@
     border: ridge 3px white;
     border-radius: 25%;
 }
+
 /*Pop-up*/
 
 #instruc-popup {
@@ -56,6 +57,16 @@
     visibility: none; 
     display: none;
 }
+
+/* Flip GitHub */ 
+
+#rot-90 {
+    transform: rotate(90deg);
+    transform-origin: left;
+    background-color: yellow;
+    margin-left: 1345px;
+ }
+
 /* Animation for BG */
 
 
