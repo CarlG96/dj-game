@@ -380,6 +380,9 @@ a {
 
 /* circles at the top */
 
+.space {
+    margin-right: 80px;
+}
 
 .circle_top {
     width: calc(100vw/20);
