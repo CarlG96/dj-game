@@ -1,6 +1,8 @@
-# DJ IN DA HOUSE 
+# !!!ULTRA MAYHEM!!!
 
 ### responsive picture 
+
+## [Live Project link](https://mp3cut.net/): Used to snip audio clips. 
 
 ### Game Idea 
 
@@ -12,12 +14,30 @@ the player will have to work their way up again.
 
 ### User Stories 
 
+- As user I want, to click a button and here a sound. 
 
+- As user I want, understand how to play the game.
+
+- As user I want, I would like a memory game, that play music at the sametime.
+
+- As user I want, a visual and audio display of the sequnence
+
+- As user I want, there to be a in dificulty, to remeber the sequence.  
+
+- As user I want, I want to be able to stop the dificulty. 
+
+- As user I want, there to be a game identity. 
+
+- As user I want, to have links to creators/ developers Linkedins and GitHub. 
+
+- As user I want, I WANT MAYHEM!!
 
 ### logos 
 
 
 ### Wireframes
+
+![Wireframes](documents/wireframe.png)
 
 <img src="./assets/images/dj-deck-wireframe-picture.png">
 
@@ -27,6 +47,10 @@ the player will have to work their way up again.
 
 - [Epide Mic Sounds](https://www.epidemicsound.com/music/genres/): Used to source all audio for the project/ game. Allows public performance rights etc.
 
+- [Mix Kit](https://mixkit.co/free-sound-effects/lose/): Sounds for correct sequence and incorrect sequences, were sourced here from mix kit.
+
 ### Credit 
 
 - Brendon Moeller: Backing track for the game [Find Here](https://www.epidemicsound.com/track/xfBuBNCESe/).
+
+- Headhunterz: This track was used for ULTRAMAYHEM button [Find Here](https://www.youtube.com/watch?v=e590yuFyMf4&ab_channel=ArtofCreation)
