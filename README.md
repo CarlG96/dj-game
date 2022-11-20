@@ -34,6 +34,8 @@ the player will have to work their way up again.
 
 ### logos 
 
+![Logo](documents/logo.png)
+
 
 ### Wireframes
 
