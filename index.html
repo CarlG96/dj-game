@@ -147,22 +147,22 @@
 
               <div class="row d-flex ms-3">
                 <div class="col-2">
-                  <button class="square button color-change key" id="q" onclick="buttonHandler('q')">
+                  <button class="square button color-change key" id="q" onclick="onPress('q', 'audioQ')">
                     Q
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="w" onclick="buttonHandler('w')">
+                  <button class="square button color-change key" id="w" onclick="onPress('w', 'audioW')">
                     W
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="e" onclick="buttonHandler('e')">
+                  <button class="square button color-change key" id="e" onclick="onPress('e', 'audioE')">
                     E
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="r" onclick="buttonHandler('r')">
+                  <button class="square button color-change key" id="r" onclick="onPress('r', 'audioR')">
                     R
                   </button>
                 </div>
@@ -179,22 +179,22 @@
               </div>
               <div class="row ms-3">
                 <div class="col-2">
-                  <button class="square button color-change key" id="a" onclick="buttonHandler('a')">
+                  <button class="square button color-change key" id="a" onclick="onPress('a', 'audioA')">
                     A
                   </button>
                 </div>
                 <div class=col-2>
-                  <button class="square button color-change key" id="s" onclick="buttonHandler('s')">
+                  <button class="square button color-change key" id="s" onclick="onPress('s', 'audioS')">
                     S
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="d" onclick="buttonHandler('d')">
+                  <button class="square button color-change key" id="d" onclick="onPress('d', 'audioD')">
                     D
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="f" onclick="buttonHandler('f')">
+                  <button class="square button color-change key" id="f" onclick="onPress('f', 'audioF')">
                     F
                   </button>
                 </div>
@@ -208,22 +208,22 @@
               </div>
               <div class="row ms-3">
                 <div class="col-2">
-                  <button class="square button color-change key" id="z" onclick="buttonHandler('z')">
+                  <button class="square button color-change key" id="z" onclick="onPress('z', 'audioZ')">
                     Z
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="x" onclick="buttonHandler('x')">
+                  <button class="square button color-change key" id="x" onclick="onPress('x', 'audioX')">
                     X
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="c" onclick="buttonHandler('c')">
+                  <button class="square button color-change key" id="c" onclick="onPress('c', 'audioC')">
                     C
                   </button>
                 </div>
                 <div class="col-2">
-                  <button class="square button color-change key" id="v" onclick="buttonHandler('v')">
+                  <button class="square button color-change key" id="v" onclick="onPress('v', 'audioV')">
                     V
                   </button>
                 </div>
@@ -261,8 +261,7 @@
                 </div>
                 <div class="col-3">
                   <div class="funky-animation funk">
-                    <p>Score:<span id="score-counter"></p>
-                    <p>0</p>
+                    <p>Score:<span id="score-counter">0</span></p>
                   </div>
                 </div>
                 <div class="col-3">
@@ -321,6 +320,8 @@
   <audio data-key="x" src="./assets/sounds/sound10.mp3" id="audioX"></audio>
   <audio data-key="c" src="./assets/sounds/sound11.mp3" id="audioC"></audio>
   <audio data-key="v" src="./assets/sounds/sound12.mp3" id="audioV"></audio>
+  <audio src="./assets/sounds/win-sound.wav" id="winSound"></audio>
+  <audio src="./assets/sounds/lose-sound.wav" id="loseSound"></audio>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

@@ -13,8 +13,11 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+const winSound = document.getElementById("winSound");
+const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
+
 
 // parralax for music notes
 // let bg = document.querySelector('.parallax');
@@ -87,7 +90,7 @@ const onPress = (key, audio) => {
     } else {
         
         // FAIL STATE
-
+        loseSound.play();
         playerIndex = 0;
         playerArray.length = 0;
         gameArray.length = 0;
@@ -98,6 +101,7 @@ const onPress = (key, audio) => {
 
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
         console.log(playerArray);
+        winSound.play();
         playerIndex = 0;
         ++round;
         addScore();
