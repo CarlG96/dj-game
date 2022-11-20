@@ -304,6 +304,12 @@
     cursor: pointer;
 }
 
+.restart:active{
+    color: #fad717;
+    border-color: #5f2879;
+    transform:scale(0.8);
+}
+
 /* for instructions button */
 .instructions {
     margin-top: 10px;

@@ -72,6 +72,7 @@ const playerArray = [];
 const gameArray = [];
 let playerIndex = 0;
 let round = 1; 
+musicPlaying = false;
 
 const onPress = (key, audio) => {
     let keyElement = document.getElementById(key);
@@ -122,6 +123,9 @@ const onPress = (key, audio) => {
 
 
 const restart = () => {
+    if(!musicPlaying){
+        mainSong.play();
+    }
     gameArray.length = 0;
     console.log(gameArray);
     playerIndex = 0;
