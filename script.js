@@ -17,6 +17,8 @@ const winSound = document.getElementById("winSound");
 const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
+const winText = document.getElementById('winText');
+const loseText = document.getElementById('loseText');
 
 
 // parralax for music notes
@@ -91,6 +93,10 @@ const onPress = (key, audio) => {
         
         // FAIL STATE
         loseSound.play();
+        loseText.classList.remove('hide');
+        setTimeout(() => {
+            loseText.classList.add('hide');
+        }, 2000);
         playerIndex = 0;
         playerArray.length = 0;
         gameArray.length = 0;
@@ -102,6 +108,10 @@ const onPress = (key, audio) => {
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
         console.log(playerArray);
         winSound.play();
+        winText.classList.remove('hide');
+        setTimeout(() => {
+            winText.classList.add('hide');
+        }, 2000);
         playerIndex = 0;
         ++round;
         addScore();

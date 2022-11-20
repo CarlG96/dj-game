@@ -618,3 +618,27 @@ a {
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
+.win-lose-div {
+    
+}
+
+.wintext {
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 999;
+    color:#00ba71;
+}
+
+.losetext {
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 999;
+    color:#f43545;
+}
+
