@@ -73,6 +73,7 @@ const gameArray = [];
 let playerIndex = 0;
 let round = 1; 
 musicPlaying = false;
+playerInput = true;
 
 const onPress = (key, audio) => {
     let keyElement = document.getElementById(key);
@@ -135,7 +136,7 @@ const restart = () => {
 }
 
 const startGame = (num) => {
-
+    playerInput=false;
     playerArray.length = 0; 
 
     for (let i = num-1; i < num; i++ ) {
@@ -164,6 +165,7 @@ const startGame = (num) => {
             
             ++i;
         } else {
+            playerInput = true;
             clearInterval(gameArraySequencePlay);
             console.log(gameArray);
         }
@@ -173,15 +175,27 @@ const startGame = (num) => {
 //hotkeys
 
 
-hotkeys('q', () => onPress('q', 'audioQ'));
-hotkeys('w', () => onPress('w', 'audioW'));
-hotkeys('e', () => onPress('e', 'audioE'));
-hotkeys('r', () => onPress('r', 'audioR'));
-hotkeys('a', () => onPress('a', 'audioA'));
-hotkeys('s', () => onPress('s', 'audioS'));
-hotkeys('d', () => onPress('d', 'audioD'));
-hotkeys('f', () => onPress('f', 'audioF'));
-hotkeys('z', () => onPress('z', 'audioZ'));
-hotkeys('x', () => onPress('x', 'audioX'));
-hotkeys('c', () => onPress('c', 'audioC'));
-hotkeys('v', () => onPress('v', 'audioV'));
+hotkeys('q', () => {
+if(playerInput){onPress('q', 'audioQ')}});
+hotkeys('w', () => {
+if(playerInput){onPress('w', 'audioW')}});
+hotkeys('e', () => {
+if(playerInput){onPress('e', 'audioE')}});
+hotkeys('r', () => {
+if(playerInput){onPress('r', 'audioR')}});
+hotkeys('a', () => {
+if(playerInput){onPress('a', 'audioA')}});
+hotkeys('s', () => {
+if(playerInput){onPress('s', 'audioS')}});
+hotkeys('d', () => {
+if(playerInput){onPress('d', 'audioD')}});
+hotkeys('f', () => {
+if(playerInput){onPress('f', 'audioF')}});
+hotkeys('z', () => {
+if(playerInput){onPress('z', 'audioZ')}});
+hotkeys('x', () => {
+if(playerInput){onPress('x', 'audioX')}});
+hotkeys('c', () => {
+if(playerInput){onPress('c', 'audioC')}});
+hotkeys('v', () => {
+if(playerInput){onPress('v', 'audioV')}});
