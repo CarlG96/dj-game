@@ -2,7 +2,9 @@
 
 ### responsive picture 
 
-## [Live Project link](https://mp3cut.net/): Used to snip audio clips. 
+## [Live Project link]('#')
+
+## [Presentation Video]('#')
 
 ### Game Idea 
 
