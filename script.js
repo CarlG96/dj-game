@@ -76,6 +76,7 @@ musicPlaying = false;
 playerInput = true;
 
 const onPress = (key, audio) => {
+    if(playerInput){
     let keyElement = document.getElementById(key);
     let audioElement = document.getElementById(audio);
 
@@ -119,7 +120,7 @@ const onPress = (key, audio) => {
         addScore();
         startGame(round);
     } 
-
+}
 }
 
 
