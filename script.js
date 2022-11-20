@@ -13,8 +13,13 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+const winSound = document.getElementById("winSound");
+const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
+const winText = document.getElementById('winText');
+const loseText = document.getElementById('loseText');
+
 
 // parralax for music notes
 // let bg = document.querySelector('.parallax');
@@ -67,6 +72,7 @@ const playerArray = [];
 const gameArray = [];
 let playerIndex = 0;
 let round = 1; 
+musicPlaying = false;
 
 const onPress = (key, audio) => {
     let keyElement = document.getElementById(key);
@@ -87,7 +93,11 @@ const onPress = (key, audio) => {
     } else {
         
         // FAIL STATE
-
+        loseSound.play();
+        loseText.classList.remove('hide');
+        setTimeout(() => {
+            loseText.classList.add('hide');
+        }, 2000);
         playerIndex = 0;
         playerArray.length = 0;
         gameArray.length = 0;
@@ -98,12 +108,30 @@ const onPress = (key, audio) => {
 
     if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
         console.log(playerArray);
+        winSound.play();
+        winText.classList.remove('hide');
+        setTimeout(() => {
+            winText.classList.add('hide');
+        }, 2000);
         playerIndex = 0;
         ++round;
         addScore();
         startGame(round);
     } 
 
+}
+
+
+const restart = () => {
+    if(!musicPlaying){
+        mainSong.play();
+    }
+    gameArray.length = 0;
+    console.log(gameArray);
+    playerIndex = 0;
+    round = 1;
+    removeScore();
+    startGame(1);
 }
 
 const startGame = (num) => {
@@ -116,6 +144,7 @@ const startGame = (num) => {
         console.log(gameArray);
     }
 
+    //plays sequence
     let i = 0;
     const gameArraySequencePlay = setInterval(() => {
         if (i < gameArray.length) {

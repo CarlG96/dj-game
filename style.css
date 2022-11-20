@@ -304,6 +304,12 @@
     cursor: pointer;
 }
 
+.restart:active{
+    color: #fad717;
+    border-color: #5f2879;
+    transform:scale(0.8);
+}
+
 /* for instructions button */
 .instructions {
     margin-top: 10px;
@@ -616,5 +622,25 @@ a {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.wintext {
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 999;
+    color:#00ba71;
+}
+
+.losetext {
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 999;
+    color:#f43545;
 }
 
