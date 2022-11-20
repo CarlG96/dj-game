@@ -644,3 +644,56 @@ a {
     color:#f43545;
 }
 
+/* ULTRAMAYHEM SECTION */
+
+.mayhem-colored {
+    animation: animate 4s ease infinite;
+}
+
+.mayhem-dance {
+    animation: mayhem-dance 0.5s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mayhem-dance{
+    0%{
+        border-radius: 6rem;
+        color:#00ba71;
+    }
+    25%{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 8rem;
+    }
+    50%{
+        border-radius: 6rem;
+    }
+    75%{
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-right-radius: 8rem;
+    }
+    100%{
+        border-radius: 6rem;
+        color:#00ba71;
+    }
+}
+
+.mayhem-rotate-medium {
+    animation: mayhem-spin 5s infinite;
+    animation-timing-function: linear;
+}
+
+.mayhem-rotate-fast {
+    animation: mayhem-spin 2s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mayhem-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}

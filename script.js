@@ -13,6 +13,8 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+const ultraMayhemSong = document.getElementById('ultraMayhemSong');
+const ultraMayhemButton = document.getElementById('ultraMayhem');
 const winSound = document.getElementById("winSound");
 const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
@@ -40,6 +42,46 @@ const addScore = () => {
 
 const removeScore = () => {
     scoreCounter.innerText = 0;
+}
+
+const ultraMayhem = () => {
+    if(musicPlaying) {
+        ultraMayhemButton.innerText = `Chill out dude...`;
+        ultraMayhemButton.classList.add('mayhem-colored', 'mayhem-rotate-medium');
+        document.getElementById('lin-head').classList.add('mayhem-colored');
+        document.getElementById('git-head').classList.add('mayhem-colored');
+        funkyButtons = document.querySelectorAll('.funky-animation');
+        funkyButtons.forEach(funkyButton => {
+            funkyButton.classList.add('mayhem-dance');
+        });
+        gameButtons.forEach(gameButton => {
+            gameButton.classList.add('mayhem-rotate-fast');
+        });
+        musicPlaying=false;
+        ultraMayhemSong.pause();
+        ultraMayhemSong.currentTime=0;
+        mainSong.currentTime=0;
+        mainSong.play();
+    } else {
+        ultraMayhemButton.innerText = `!!!ULTRAMAYHEM!!!`;
+        ultraMayhemButton.classList.remove('mayhem-colored', 'mayhem-rotate-medium');
+        document.getElementById('lin-head').classList.remove('mayhem-colored');
+        document.getElementById('git-head').classList.remove('mayhem-colored');
+        funkyButtons = document.querySelectorAll('.funky-animation');
+        funkyButtons.forEach(funkyButton => {
+            funkyButton.classList.remove('mayhem-dance');
+        });
+        
+        gameButtons.forEach(gameButton => {
+            gameButton.classList.remove('mayhem-rotate-fast');
+        });
+        musicPlaying=true;
+        mainSong.pause();
+        mainSong.currentTime=0;
+        ultraMayhemSong.currentTime=0;
+        ultraMayhemSong.play();}
+
+        restart();
 }
 
 //hotkey functions
@@ -72,8 +114,8 @@ const playerArray = [];
 const gameArray = [];
 let playerIndex = 0;
 let round = 1; 
-musicPlaying = false;
-playerInput = true;
+let musicPlaying = true;
+let playerInput = true;
 
 const onPress = (key, audio) => {
     if(playerInput){
@@ -125,8 +167,17 @@ const onPress = (key, audio) => {
 
 
 const restart = () => {
-    if(!musicPlaying){
+    if(musicPlaying){
+        ultraMayhemSong.pause();
+        ultraMayhemSong.currentTime=0;
+        mainSong.currentTime=0;
         mainSong.play();
+    }
+    else if(!musicPlaying){
+        mainSong.pause();
+        mainSong.currentTime=0;
+        ultraMayhemSong.currentTime=0;
+        ultraMayhemSong.play();
     }
     gameArray.length = 0;
     console.log(gameArray);

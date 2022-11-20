@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./assets/icon/hackathon-favicon.ico">
 
   <!-- Bootstrap library -->
 
@@ -107,7 +108,7 @@
                 <!-- Make it Mayhem -->
 
                 <div class="col-4 text-center pt-5 bt-1">
-                  <button class="btn btn-warning">!!!ULTRAMAYHEM!!!</button>
+                  <button class="btn btn-warning" onclick="ultraMayhem()" id="ultraMayhem">!!!ULTRAMAYHEM!!!</button>
                 </div>
 
               </div>
@@ -178,7 +179,7 @@
                     target="_blank"></a>
                 </div>
                 <div id="rot-90" class="col d-flex justify-content-content align-content-center">
-                  <h1>GitHub</h1>
+                  <h1 id="git-head">GitHub</h1>
                 </div>
               </div>
               <div class="row ms-3">
@@ -309,6 +310,9 @@
 
   <audio loop id="mainSong">
     <source src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3" type="audio/mpeg" />
+  </audio>
+  <audio loop id="ultraMayhemSong">
+    <source src="./assets/sounds/headhunterz.mp3" type="audio/mpeg" />
   </audio>
   <audio data-key="q" src="./assets/sounds/sound1.mp3" id="audioQ"></audio>
   <audio data-key="w" src="./assets/sounds/sound2.mp3" id="audioW"></audio>
