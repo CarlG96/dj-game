@@ -63,8 +63,14 @@
 #rot-90 {
     transform: rotate(90deg);
     transform-origin: left;
-    background-color: yellow;
-    margin-left: 1345px;
+    color: white;
+    margin-left: 20px;
+ }
+
+ /* Linkedin Head */ 
+
+ #lin-head {
+    color: white;
  }
 
 /* Animation for BG */
