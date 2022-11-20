@@ -120,6 +120,16 @@ const onPress = (key, audio) => {
 
 }
 
+
+const restart = () => {
+    gameArray.length = 0;
+    console.log(gameArray);
+    playerIndex = 0;
+    round = 1;
+    removeScore();
+    startGame(1);
+}
+
 const startGame = (num) => {
 
     playerArray.length = 0; 
@@ -130,6 +140,7 @@ const startGame = (num) => {
         console.log(gameArray);
     }
 
+    //plays sequence
     let i = 0;
     const gameArraySequencePlay = setInterval(() => {
         if (i < gameArray.length) {

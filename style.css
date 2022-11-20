@@ -618,10 +618,6 @@ a {
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-.win-lose-div {
-    
-}
-
 .wintext {
     position: fixed;
     top: 10vh;
