@@ -58,6 +58,7 @@ const ultraMayhem = () => {
         gameBtns.forEach(gameButton => {
             gameButton.classList.add('mayhem-rotate-fast');
         });
+        document.getElementById('icon').classList.add('mayhem-colored');
         musicPlaying=false;
         ultraMayhemSong.pause();
         ultraMayhemSong.currentTime=0;
@@ -76,6 +77,7 @@ const ultraMayhem = () => {
         gameBtns.forEach(gameButton => {
             gameButton.classList.remove('mayhem-rotate-fast');
         });
+        document.getElementById('icon').classList.remove('mayhem-colored');
         musicPlaying=true;
         mainSong.pause();
         mainSong.currentTime=0;
