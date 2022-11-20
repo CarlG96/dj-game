@@ -38,6 +38,8 @@ the player will have to work their way up again.
 
 ![Logo](documents/logo.png)
 
+[Credits]("https://www.flaticon.com/free-icons/dj-control")
+
 
 ### Wireframes
 
