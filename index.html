@@ -1,312 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap library -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+  <!-- Bootstrap library -->
 
-    <!-- Button animation -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-      type="text/css"
-    />
+  <!-- Button animation -->
 
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+    type="text/css" />
 
-    <script type="text/javascript">
-      window.onload = function () {
-        openModalPLEASEFFS();
-      };
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-      function openModalPLEASEFFS() {
-        $("#reg-modal").modal("show");
-      }
-    </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      openModalPLEASEFFS();
+    };
 
-    <link rel="stylesheet" href="./style.css" />
-    <title>DJ-Game</title>
-  </head>
+    function openModalPLEASEFFS() {
+      $("#reg-modal").modal("show");
+    }
+  </script>
 
-  <body class="color-change">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
+  <link rel="stylesheet" href="./style.css" />
+  <title>DJ-Game</title>
+</head>
 
-          <!-- Sound track on load -->
-
-          <audio src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3" id="songload" loop="loop" autoplay="autoplay" muted="muted"></audio>
+<body class="color-change">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div>
+          <!-- bg animation -->
+          <div class="light x1"></div>
+          <div class="light x2"></div>
+          <div class="light x3"></div>
+          <div class="light x4"></div>
+          <div class="light x5"></div>
+          <div class="light x6"></div>
+          <div class="light x7"></div>
+          <div class="light x8"></div>
+          <div class="light x9"></div>
 
           <div>
-            <!-- bg animation -->
-            <div class="light x1"></div>
-            <div class="light x2"></div>
-            <div class="light x3"></div>
-            <div class="light x4"></div>
-            <div class="light x5"></div>
-            <div class="light x6"></div>
-            <div class="light x7"></div>
-            <div class="light x8"></div>
-            <div class="light x9"></div>
+            <div class="parallax">
+              <div class="note-position-1 note-amination note-hover">
+                &#9835;
+              </div>
+              <div class="note-position-2 note-amination note-hover animation-delay-2">
+                &#9833;
+              </div>
+              <div class="note-position-3 note-amination note-hover animation-delay-1">
+                &#9839;
+              </div>
+              <div class="note-position-4 note-amination note-hover">
+                &#9834;
+              </div>
 
-            <div>
-              <div class="parallax">
-                <div class="note-position-1 note-amination note-hover">
-                  &#9835;
-                </div>
-                <div
-                  class="note-position-2 note-amination note-hover animation-delay-2"
-                >
-                  &#9833;
-                </div>
-                <div
-                  class="note-position-3 note-amination note-hover animation-delay-1"
-                >
-                  &#9839;
-                </div>
-                <div class="note-position-4 note-amination note-hover">
-                  &#9834;
+              <div class="note-position-5 note-amination note-hover">
+                &#9835;
+              </div>
+              <div class="note-position-6 note-amination note-hover animation-delay-2">
+                &#9833;
+              </div>
+              <div class="note-position-7 note-amination note-hover animation-delay-1">
+                &#9839;
+              </div>
+              <div class="note-position-8 note-amination note-hover">
+                &#9834;
+              </div>
+
+              <div class="note-position-9 note-amination note-hover">
+                &#9835;
+              </div>
+              <div class="note-position-10 note-amination note-hover animation-delay-2">
+                &#9833;
+              </div>
+              <div class="note-position-11 note-amination note-hover animation-delay-1">
+                &#9839;
+              </div>
+              <div class="note-position-12 note-amination note-hover">
+                &#9834;
+              </div>
+            </div>
+
+            <!--Main div of qube -->
+
+            <div class="qube col-12">
+
+              <div class="row d-flex justify-content-content align-content-center">
+                <div class="col-8 text-center pt-4 bt-1 ">
+                  <h1 id="lin-head">Linkedin</h1>
                 </div>
 
-                <div class="note-position-5 note-amination note-hover">
-                  &#9835;
-                </div>
-                <div
-                  class="note-position-6 note-amination note-hover animation-delay-2"
-                >
-                  &#9833;
-                </div>
-                <div
-                  class="note-position-7 note-amination note-hover animation-delay-1"
-                >
-                  &#9839;
-                </div>
-                <div class="note-position-8 note-amination note-hover">
-                  &#9834;
+                <!-- Make it Mayhem -->
+
+                <div class="col-4 text-center pt-5 bt-1">
+                  <button class="btn btn-warning">Initiate Mayhem</button>
                 </div>
 
-                <div class="note-position-9 note-amination note-hover">
-                  &#9835;
+              </div>
+
+              <!-- circle at the top -->
+
+              <div class="row ms-3 pt-1 gap-3">
+                <div class="col-1">
+
+                  <a href="https://www.linkedin.com/in/carl-gardiner-156771234/"
+                    class="circle_top button rotation-1 carl-photo" target="_blank">
+
+                  </a>
                 </div>
-                <div
-                  class="note-position-10 note-amination note-hover animation-delay-2"
-                >
-                  &#9833;
+                <div class="col-1">
+                  <a href="https://www.linkedin.com/in/justin-brown-full-stack-software-developer/"
+                    class="circle_top button rotation-2 justin-photo .space" target="_blank">
+
+                  </a>
                 </div>
-                <div
-                  class="note-position-11 note-amination note-hover animation-delay-1"
-                >
-                  &#9839;
+                <div class="col-1">
+                  <a href="https://www.linkedin.com/in/keis-smit-developer/"
+                    class="circle_top button rotation-3 keis-photo .space" target="_blank"></a>
                 </div>
-                <div class="note-position-12 note-amination note-hover">
-                  &#9834;
+                <div class="col-1">
+                  <a href="https://www.linkedin.com/in/christian-bergane-531184231/"
+                    class="circle_top button christian-photo .space" target="_blank"></a>
+                </div>
+                <div class="col-1">
+                  <a href="https://www.linkedin.com/in/denys-a-7320b1227/"
+                    class="circle_top button rotation-3 denys-photo .space" target="_blank"></a>
+                </div>
+                <div class="col-1">
+                  <a href="https://www.linkedin.com/in/ronny-johansson-4759a0252/"
+                    class="circle_top button rotation-1 ronny-photo .space" target="_blank"></a>
+                </div>
+
+              </div>
+
+              <!-- main buttons -->
+
+              <div class="row d-flex ms-3">
+                <div class="col-2">
+                  <button class="square button color-change key" id="q" onclick="buttonHandler('q')">
+                    Q
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="w" onclick="buttonHandler('w')">
+                    W
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="e" onclick="buttonHandler('e')">
+                    E
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="r" onclick="buttonHandler('r')">
+                    R
+                  </button>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/JJBR13" class="circle_top button justin-photo" target="_blank"></a>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/KeisGSmit" class="circle_top button rotation-2 keis-photo"
+                    target="_blank"></a>
+                </div>
+                <div id="rot-90" class="col-12 d-flex justify-content-content align-content-center">
+                  <h1>GitHub</h1>
+                </div>
+              </div>
+              <div class="row ms-3">
+                <div class="col-2">
+                  <button class="square button color-change key" id="a" onclick="buttonHandler('a')">
+                    A
+                  </button>
+                </div>
+                <div class=col-2>
+                  <button class="square button color-change key" id="s" onclick="buttonHandler('s')">
+                    S
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="d" onclick="buttonHandler('d')">
+                    D
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="f" onclick="buttonHandler('f')">
+                    F
+                  </button>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/CarlG96" class="circle_top button carl-photo" target="_blank"></a>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/CBergane" class="circle_top button rotation-3 christian-photo"
+                    target="_blank"></a>
+                </div>
+              </div>
+              <div class="row ms-3">
+                <div class="col-2">
+                  <button class="square button color-change key" id="z" onclick="buttonHandler('z')">
+                    Z
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="x" onclick="buttonHandler('x')">
+                    X
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="c" onclick="buttonHandler('c')">
+                    C
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button class="square button color-change key" id="v" onclick="buttonHandler('v')">
+                    V
+                  </button>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/DenysRudenko" class="circle_top button rotation-1 denys-photo"
+                    target="_blank"></a>
+                </div>
+                <div class="col-1">
+                  <a href="https://github.com/Rontoni" class="circle_top button rotation-2 ronny-photo"
+                    target="_blank"></a>
                 </div>
               </div>
 
-              <!--Main div of qube -->
 
-              <div class="qube col-12">
-                <!-- circle at the top -->
-                <div class="row ms-3 pt-3">
-                    <div class="col-2">
-                        
-                        <a href="https://www.linkedin.com/in/carl-gardiner-156771234/" class="circle_top button rotation-1 carl-photo" target="_blank">
-                          
-                        </a>
-                    </div>
-                    <div class="col-2">
-                        <a href="https://www.linkedin.com/in/justin-brown-full-stack-software-developer/" class="circle_top button rotation-2 justin-photo" target="_blank">
 
-                        </a>
-                    </div>
-                    <div class="col-2">
-                        <a href="https://www.linkedin.com/in/keis-smit-developer/" class="circle_top button rotation-3 keis-photo" target="_blank"></a>
-                    </div>
-                    <div class="col-2">
-                        <a href="https://www.linkedin.com/in/christian-bergane-531184231/" class="circle_top button christian-photo" target="_blank"></a>
-                    </div>
-                    <div class="col-1">
-                        <a href="https://www.linkedin.com/in/denys-a-7320b1227/" class="circle_top button rotation-3 denys-photo" target="_blank"></a>
-                    </div>
-                    <div class="col-1">
-                        <a href="https://www.linkedin.com/in/ronny-johansson-4759a0252/" class="circle_top button rotation-1 ronny-photo" target="_blank"></a>
-                    </div>
-                  
-                </div>
 
-                <!-- main buttons -->
-                <div class="row ms-3">
-                    <div class="col-2">
-                        <button
-                        class="square button color-change key"
-                        id="q"
-                        onclick="onPress('q', 'audioQ')"
-                        >
-                        Q
-                        </button>
-                    </div>
-                    <div class="col-2">
-                        <button
-                        class="square button color-change key"
-                        id="w"
-                        onclick="onPress('w', 'audioW')"
-                        >
-                        W
-                        </button>
-                    </div>
-                    <div class="col-2">
-                        <button
-                        class="square button color-change key"
-                        id="e"
-                        onclick="onPress('e', 'audioE')"
-                        >
-                      E
-                        </button>
-                    </div>
-                    <div class="col-2">
-                        <button
-                        class="square button color-change key"
-                        id="r"
-                        onclick="onPress('r', 'audioR')"
-                        >
-                      R
-                        </button>
-                    </div>
-                    <div class="col-1">
-                        <a href="https://github.com/JJBR13" class="circle_top button justin-photo" target="_blank"></a>
-                    </div>
-                    <div class="col-1">
-                        <a href="https://github.com/KeisGSmit" class="circle_top button rotation-2 keis-photo" target="_blank"></a>
-                    </div>
-                </div>
-                <div class="row ms-3">
-                    <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="a"
-                      onclick="onPress('a', 'audioA')"
-                    >
-                      A
-                    </button>
-                </div>
-                <div class=col-2>
-                    <button
-                      class="square button color-change key"
-                      id="s"
-                      onclick="onPress('s', 'audioS')"
-                    >
-                      S
-                    </button>
-                </div>
-                <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="d"
-                      onclick="onPress('d', 'audioD')"
-                    >
-                      D
-                    </button>
-                </div>
-                <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="f"
-                      onclick="onPress('f', 'audioF')"
-                    >
-                      F
-                    </button>
-                </div>
-                <div class="col-1">
-                    <a href="https://github.com/CarlG96" class="circle_top button carl-photo" target="_blank"></a>
-                </div>
-                <div class="col-1">
-                    <a href="https://github.com/CBergane" class="circle_top button rotation-3 christian-photo" target="_blank"></a>
-                </div>
-                </div>
-                <div class="row ms-3">
-                    <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="z"
-                      onclick="onPress('z', 'audioZ')"
-                    >
-                      Z
-                    </button>
-                    </div>
-                    <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="x"
-                      onclick="onPress('x', 'audioX')"
-                    >
-                      X
-                    </button>
-                    </div>
-                    <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="c"
-                      onclick="onPress('c', 'audioC')"
-                    >
-                      C
-                    </button>
-                    </div>
-                    <div class="col-2">
-                    <button
-                      class="square button color-change key"
-                      id="v"
-                      onclick="onPress('v', 'audioV')"
-                    >
-                      V
-                    </button>
-                </div>
-                <div class="col-1">
-                    <a href="https://github.com/DenysRudenko" class="circle_top button rotation-1 denys-photo" target="_blank"></a>
-                </div>
-                <div class="col-1">
-                    <a href="https://github.com/Rontoni" class="circle_top button rotation-2 ronny-photo" target="_blank"></a>
-                </div>
-                </div>
-                <div class="row ms-2">
-                    
-                    <div class="col-3">
 
-                        <!--Modal button-->
 
-                        <button
-                            class="funky-animation instructions"
-                            data-bs-toggle="modal"
-                            data-bs-target="#reg-modal"
-                        >
-                        Rules of the game
-                        </button>
-                    </div>
-                    <div class="col-3">
-                        <div class="funky-animation restart" onclick="startGame(1)">
-                      <p>Restart Game</p>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="funky-animation funk">
-                        <p>Score: <span id="score-counter">0</span></p>
-                          
-                        </div>
-                    </div>
-                    <div class="col-3">
-                      <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />
+
+
+
+              <div class="row ms-2">
+
+                <div class="col-3">
+
+                  <!--Modal button-->
+                  <button class="funky-animation instructions" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                    Rules of the game
+                  </button>
+                </div>
+                <div class="col-3">
+                  <div class="funky-animation restart">
+                    <p>Restart Game</p>
                   </div>
+                </div>
+                <div class="col-3">
+                  <div class="funky-animation funk">
+                    <p>Score:<span id="score-counter"></p>
+                    <p>0</p>
                   </div>
+                </div>
+                <div class="col-3">
+                  <img id="icon" src="/assets/icon/dj-booth.png" alt="logoicon" />
                 </div>
               </div>
             </div>
@@ -314,60 +274,58 @@
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
-    <!-- Modal it self -->
-            <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true"
-                class="col-12 position-absolute top-50 start-50 translate-middle text-center p-3">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modal-title">IT'S DJ DECKING LARRY</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div id="instructions" class="modal-body">
-    <!-- Instructions-->
+  <!-- Modal it self -->
+  <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true"
+    class="col-12 position-absolute top-50 start-50 translate-middle text-center p-3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">IT'S DJ DECKING LARRY</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Instructions-->
 
-                            <p>How long can you keep up with the musical DJ beat?</p>
+          <p>How long can you keep up with the musical DJ beat?</p>
 
-                            <p>A sequence will show on the deck, after it is ended follow the sequences and play the
-                                same musical beat.
-                                If you get it correct you will then see another sequence, increaseing in complexity and
-                                speed.
-                            </p>
+          <p>A sequence will show on the deck, after it is ended follow the sequences and play the
+            same musical beat.
+            If you get it correct you will then see another sequence, increaseing in complexity and
+            speed.
+          </p>
 
-                            <p>See your score increase with each beat sequence. <strong> Where will you end up on our
-                                    leaderboard?</strong></p>
-                            <button id="start-game" class="hvr-grow p-2" type="button" onclick="startGame(1)">Start Game</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <p>See your score increase with each beat sequence. <strong> Where will you end up on our
+              leaderboard?</strong></p>
+          <button id="start-game" class=" hvr-grow p-2" type="button" data-bs-dismiss="modal" aria-label="Close">Start
+            Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <audio loop id="mainSong">
-      <source
-        src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3"
-        type="audio/mpeg"
-      />
-    </audio>
-    <audio data-key="q" src="./assets/sounds/sound1.mp3" id="audioQ"></audio>
-    <audio data-key="w" src="./assets/sounds/sound2.mp3" id="audioW"></audio>
-    <audio data-key="e" src="./assets/sounds/sound3.mp3" id="audioE"></audio>
-    <audio data-key="r" src="./assets/sounds/sound4.mp3" id="audioR"></audio>
-    <audio data-key="a" src="./assets/sounds/sound5.mp3" id="audioA"></audio>
-    <audio data-key="s" src="./assets/sounds/sound6.mp3" id="audioS"></audio>
-    <audio data-key="d" src="./assets/sounds/sound7.mp3" id="audioD"></audio>
-    <audio data-key="f" src="./assets/sounds/sound8.mp3" id="audioF"></audio>
-    <audio data-key="z" src="./assets/sounds/sound9.mp3" id="audioZ"></audio>
-    <audio data-key="x" src="./assets/sounds/sound10.mp3" id="audioX"></audio>
-    <audio data-key="c" src="./assets/sounds/sound11.mp3" id="audioC"></audio>
-    <audio data-key="v" src="./assets/sounds/sound12.mp3" id="audioV"></audio>
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+  <audio loop id="mainSong">
+    <source src="./assets/sounds/ES_All That I Want - Brendon Moeller.mp3" type="audio/mpeg" />
+  </audio>
+  <audio data-key="q" src="./assets/sounds/sound1.mp3" id="audioQ"></audio>
+  <audio data-key="w" src="./assets/sounds/sound2.mp3" id="audioW"></audio>
+  <audio data-key="e" src="./assets/sounds/sound3.mp3" id="audioE"></audio>
+  <audio data-key="r" src="./assets/sounds/sound4.mp3" id="audioR"></audio>
+  <audio data-key="a" src="./assets/sounds/sound5.mp3" id="audioA"></audio>
+  <audio data-key="s" src="./assets/sounds/sound6.mp3" id="audioS"></audio>
+  <audio data-key="d" src="./assets/sounds/sound7.mp3" id="audioD"></audio>
+  <audio data-key="f" src="./assets/sounds/sound8.mp3" id="audioF"></audio>
+  <audio data-key="z" src="./assets/sounds/sound9.mp3" id="audioZ"></audio>
+  <audio data-key="x" src="./assets/sounds/sound10.mp3" id="audioX"></audio>
+  <audio data-key="c" src="./assets/sounds/sound11.mp3" id="audioC"></audio>
+  <audio data-key="v" src="./assets/sounds/sound12.mp3" id="audioV"></audio>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+
 </html>

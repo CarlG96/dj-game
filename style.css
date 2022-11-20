@@ -19,6 +19,7 @@
     border: ridge 3px white;
     border-radius: 25%;
 }
+
 /*Pop-up*/
 
 #instruc-popup {
@@ -56,6 +57,22 @@
     visibility: none; 
     display: none;
 }
+
+/* Flip GitHub */ 
+
+#rot-90 {
+    transform: rotate(90deg);
+    transform-origin: left;
+    color: white;
+    margin-left: 20px;
+ }
+
+ /* Linkedin Head */ 
+
+ #lin-head {
+    color: white;
+ }
+
 /* Animation for BG */
 
 
@@ -370,6 +387,9 @@ a {
 
 /* circles at the top */
 
+.space {
+    margin-right: 80px;
+}
 
 .circle_top {
     width: calc(100vw/20);
