@@ -23,20 +23,7 @@ const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
 const winText = document.getElementById('winText');
 const loseText = document.getElementById('loseText');
-
-
-// parralax for music notes
-// let bg = document.querySelector('.parallax');
-// window.addEventListener('mousemove', function (e) {
-//     let x = e.clientX / window.innerWidth;
-//     let y = e.clientY / window.innerHeight;
-//     bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-
-// });
-
-scoreCounter = document.getElementById('score-counter');
-
-// function for adding score, currently unused
+scoreCounter = document.getElementById('score-counter')
 
 const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
@@ -88,14 +75,6 @@ const ultraMayhem = () => {
 
         restart();
 }
-
-//hotkey functions
-
-// hotkeys('space', () => {
-//     mainSong.play();
-// })
-
-// onclick events on gameButtons referenced in html
 
 const keymap = {
     81: "q",
