@@ -1,5 +1,5 @@
-const popup = document.getElementById('instruc-popup');
 const startButton = document.getElementById('start-game');
+const module = document.getElementById('instructions');
 const audioQ = document.getElementById('audioQ');
 const audioW = document.getElementById('audioW');
 const audioE = document.getElementById('audioE');
@@ -13,270 +13,225 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+mainSong.volume = 0.5
+const ultraMayhemSong = document.getElementById('ultraMayhemSong');
+ultraMayhemSong.volume = 0.3;
+const ultraMayhemButton = document.getElementById('ultraMayhem');
+const winSound = document.getElementById("winSound");
+const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
-
-// parralax for music notes
-let bg = document.querySelector('.parallax');
-window.addEventListener('mousemove', function (e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
-    bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-
-});
-
-window.onload = popup
-
-
-
-startButton.addEventListener('click', startGame);
-
-
-function startGame() {
-    popup.classList.add('hide');
-}
-
-scoreCounter = document.getElementById('score-counter');
-
-// function for adding score, currently unused
+const winText = document.getElementById('winText');
+const loseText = document.getElementById('loseText');
+scoreCounter = document.getElementById('score-counter')
 
 const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
 }
 
-//hotkey functions
+const removeScore = () => {
+    scoreCounter.innerText = 0;
+}
 
-hotkeys('space', () => {
-    mainSong.play();
-})
+const ultraMayhem = () => {
+    if(musicPlaying) {
+        ultraMayhemButton.innerText = `Chill out dude...`;
+        ultraMayhemButton.classList.add('mayhem-colored', 'mayhem-rotate-medium');
+        document.getElementById('lin-head').classList.add('mayhem-colored');
+        document.getElementById('git-head').classList.add('mayhem-colored');
+        let funkyButtons = document.querySelectorAll('.funky-animation');
+        funkyButtons.forEach(funkyButton => {
+            funkyButton.classList.add('mayhem-dance');
+        });
+        let gameBtns = document.querySelectorAll('.square');
+        gameBtns.forEach(gameButton => {
+            gameButton.classList.add('mayhem-rotate-fast');
+        });
+        document.getElementById('icon').classList.add('mayhem-colored');
+        musicPlaying=false;
+        ultraMayhemSong.pause();
+        ultraMayhemSong.currentTime=0;
+        mainSong.currentTime=0;
+        mainSong.play();
+    } else {
+        ultraMayhemButton.innerText = `!!!ULTRAMAYHEM!!!`;
+        ultraMayhemButton.classList.remove('mayhem-colored', 'mayhem-rotate-medium');
+        document.getElementById('lin-head').classList.remove('mayhem-colored');
+        document.getElementById('git-head').classList.remove('mayhem-colored');
+        let funkyButtons = document.querySelectorAll('.funky-animation');
+        funkyButtons.forEach(funkyButton => {
+            funkyButton.classList.remove('mayhem-dance');
+        });
+        let gameBtns = document.querySelectorAll('.square');
+        gameBtns.forEach(gameButton => {
+            gameButton.classList.remove('mayhem-rotate-fast');
+        });
+        document.getElementById('icon').classList.remove('mayhem-colored');
+        musicPlaying=true;
+        mainSong.pause();
+        mainSong.currentTime=0;
+        ultraMayhemSong.currentTime=0;
+        ultraMayhemSong.play();}
 
-//button press functions, should be made into single function instead of twelve
+        restart();
+}
+
+const keymap = {
+    81: "q",
+    87: "w",
+    69: "e",
+    82: "r",
+    65: "a",
+    83: "s",
+    68: "d",
+    70: "f",
+    90: "z",
+    88: "x",
+    67: "c",
+    86: "v"
+}
+
+// Game Logic 
+
+const letterArray = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v'];
+const playerArray = [];
+const gameArray = [];
+let playerIndex = 0;
+let round = 1; 
+let musicPlaying = true;
+let playerInput = true;
+
+const onPress = (key, audio) => {
+    if(playerInput){
+    let keyElement = document.getElementById(key);
+    let audioElement = document.getElementById(audio);
+
+    keyElement.classList.add('press');
+
+    audioElement.currentTime = 0;
+        audioElement.play();
+        setTimeout(() => {
+            keyElement.classList.remove('press');
+        }, 200)
+
+    playerArray.push(key);
+
+    if (playerArray[playerIndex] === gameArray[playerIndex]) {
+        ++playerIndex;
+    } else {
+        
+        // FAIL STATE
+        loseSound.play();
+        loseText.classList.remove('hide');
+        setTimeout(() => {
+            loseText.classList.add('hide');
+        }, 2000);
+        playerIndex = 0;
+        playerArray.length = 0;
+        gameArray.length = 0;
+        round = 1;
+        removeScore();
+        return null;
+    }
+
+    if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
+        console.log(playerArray);
+        winSound.play();
+        winText.classList.remove('hide');
+        setTimeout(() => {
+            winText.classList.add('hide');
+        }, 2000);
+        playerIndex = 0;
+        ++round;
+        addScore();
+        startGame(round);
+    } 
+}
+}
+
+
+const restart = () => {
+    if(musicPlaying){
+        ultraMayhemSong.pause();
+        ultraMayhemSong.currentTime=0;
+        mainSong.currentTime=0;
+        mainSong.play();
+    }
+    else if(!musicPlaying){
+        mainSong.pause();
+        mainSong.currentTime=0;
+        ultraMayhemSong.currentTime=0;
+        ultraMayhemSong.play();
+    }
+    gameArray.length = 0;
+    console.log(gameArray);
+    playerIndex = 0;
+    round = 1;
+    removeScore();
+    startGame(1);
+}
+
+const startGame = (num) => {
+    playerInput=false;
+    playerArray.length = 0; 
+
+    for (let i = num-1; i < num; i++ ) {
+        let choose = Math.floor(Math.random() * 12);
+        gameArray[i] = letterArray[choose];
+        console.log(gameArray);
+    }
+
+    //plays sequence
+    let i = 0;
+    const gameArraySequencePlay = setInterval(() => {
+        if (i < gameArray.length) {
+            let index = gameArray[i];
+            let keyElement = document.getElementById(index);
+            console.log(keyElement);
+            keyElement.classList.add('press');
+           
+            setTimeout(() => {
+                keyElement.classList.remove('press');
+            }, 1000);
+
+            let audioElement = document.querySelector(`audio[data-key="${gameArray[i]}"]`);
+
+            audioElement.currentTime = 0;
+            audioElement.play();
+            
+            ++i;
+        } else {
+            playerInput = true;
+            clearInterval(gameArraySequencePlay);
+            console.log(gameArray);
+        }
+    }, 1500)
+}
+
+//hotkeys
+
 
 hotkeys('q', () => {
-    audioQ.play();
-    gameButtons[0].classList.add('press');
-    setTimeout(() => {
-        gameButtons[0].classList.remove('press');
-    }, 100);
-
-})
-
+if(playerInput){onPress('q', 'audioQ')}});
 hotkeys('w', () => {
-    audioW.play();
-    gameButtons[1].classList.add('press');
-    setTimeout(() => {
-        gameButtons[1].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('w', 'audioW')}});
 hotkeys('e', () => {
-    audioE.play();
-    gameButtons[2].classList.add('press');
-    setTimeout(() => {
-        gameButtons[2].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('e', 'audioE')}});
 hotkeys('r', () => {
-    audioR.play();
-    gameButtons[3].classList.add('press');
-    setTimeout(() => {
-        gameButtons[3].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('r', 'audioR')}});
 hotkeys('a', () => {
-    audioA.play();
-    gameButtons[4].classList.add('press');
-    setTimeout(() => {
-        gameButtons[4].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('a', 'audioA')}});
 hotkeys('s', () => {
-    audioS.play();
-    gameButtons[5].classList.add('press');
-    setTimeout(() => {
-        gameButtons[5].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('s', 'audioS')}});
 hotkeys('d', () => {
-    audioD.play();
-    gameButtons[6].classList.add('press');
-    setTimeout(() => {
-        gameButtons[6].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('d', 'audioD')}});
 hotkeys('f', () => {
-    audioF.play();
-    gameButtons[7].classList.add('press');
-    setTimeout(() => {
-        gameButtons[7].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('f', 'audioF')}});
 hotkeys('z', () => {
-    audioZ.play();
-    gameButtons[8].classList.add('press');
-    setTimeout(() => {
-        gameButtons[8].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('z', 'audioZ')}});
 hotkeys('x', () => {
-    audioX.play();
-    gameButtons[9].classList.add('press');
-    setTimeout(() => {
-        gameButtons[9].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('x', 'audioX')}});
 hotkeys('c', () => {
-    audioC.play();
-    gameButtons[10].classList.add('press');
-    setTimeout(() => {
-        gameButtons[10].classList.remove('press');
-    }, 100);
-})
-
+if(playerInput){onPress('c', 'audioC')}});
 hotkeys('v', () => {
-    audioV.play();
-    gameButtons[11].classList.add('press');
-    setTimeout(() => {
-        gameButtons[11].classList.remove('press');
-    }, 100);
-})
-
-// circle sounds
-
-$("#button1").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
-    }
-    audio.currentTime = 2;
-    audio.play();
-});
-
-$("#button2").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-
-});
-
-$("#button3").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button4").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button5").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button6").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button7").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button8").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button9").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button10").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button11").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button12").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button13").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-
-$("#button14").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button15").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button16").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
+if(playerInput){onPress('v', 'audioV')}});
