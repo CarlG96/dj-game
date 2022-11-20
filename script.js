@@ -50,11 +50,12 @@ const ultraMayhem = () => {
         ultraMayhemButton.classList.add('mayhem-colored', 'mayhem-rotate-medium');
         document.getElementById('lin-head').classList.add('mayhem-colored');
         document.getElementById('git-head').classList.add('mayhem-colored');
-        funkyButtons = document.querySelectorAll('.funky-animation');
+        let funkyButtons = document.querySelectorAll('.funky-animation');
         funkyButtons.forEach(funkyButton => {
             funkyButton.classList.add('mayhem-dance');
         });
-        gameButtons.forEach(gameButton => {
+        let gameBtns = document.querySelectorAll('.square');
+        gameBtns.forEach(gameButton => {
             gameButton.classList.add('mayhem-rotate-fast');
         });
         musicPlaying=false;
@@ -67,12 +68,12 @@ const ultraMayhem = () => {
         ultraMayhemButton.classList.remove('mayhem-colored', 'mayhem-rotate-medium');
         document.getElementById('lin-head').classList.remove('mayhem-colored');
         document.getElementById('git-head').classList.remove('mayhem-colored');
-        funkyButtons = document.querySelectorAll('.funky-animation');
+        let funkyButtons = document.querySelectorAll('.funky-animation');
         funkyButtons.forEach(funkyButton => {
             funkyButton.classList.remove('mayhem-dance');
         });
-        
-        gameButtons.forEach(gameButton => {
+        let gameBtns = document.querySelectorAll('.square');
+        gameBtns.forEach(gameButton => {
             gameButton.classList.remove('mayhem-rotate-fast');
         });
         musicPlaying=true;
