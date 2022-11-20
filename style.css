@@ -685,15 +685,54 @@ a {
 }
 
 .mayhem-rotate-fast {
-    animation: mayhem-spin 2s infinite;
+    animation: mayhem-spin 10s infinite;
     animation-timing-function: linear;
 }
 
 @keyframes mayhem-spin {
-    from {
+    0% {
         transform: rotate(0deg);
+        background-color: #f43545;
     }
-    to{
+    10%{
+        transform: rotate(36deg);
+        background-color: #fa8901;
+    }
+    20%{
+        transform: rotate(72deg);
+        background-color: #fad717;
+    }
+    30%{
+        transform: rotate(108deg);
+        background-color: #00ba71;
+    }
+    40%{
+        transform: rotate(144deg);
+        background-color: #00c2de;
+    }
+    50%{
+        transform: rotate(180deg);
+        background-color: #5f2879;
+    }
+    60%{
+        transform: rotate(216deg);
+        background-color: #00c2de;
+    }
+    70%{
+        transform: rotate(252deg);
+        background-color: #00ba71;
+    }
+    80%{
+        transform: rotate(288deg);
+        background-color: #fad717;
+    }
+    90%{
+        transform: rotate(324deg);
+        background-color: #fa8901;
+    }
+    100%{
         transform: rotate(359deg);
+        background-color: #f43545;
     }
 }
+

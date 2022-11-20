@@ -13,7 +13,9 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+mainSong.volume = 0.5
 const ultraMayhemSong = document.getElementById('ultraMayhemSong');
+ultraMayhemSong.volume = 0.3;
 const ultraMayhemButton = document.getElementById('ultraMayhem');
 const winSound = document.getElementById("winSound");
 const loseSound = document.getElementById("loseSound");
@@ -21,20 +23,7 @@ const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
 const winText = document.getElementById('winText');
 const loseText = document.getElementById('loseText');
-
-
-// parralax for music notes
-// let bg = document.querySelector('.parallax');
-// window.addEventListener('mousemove', function (e) {
-//     let x = e.clientX / window.innerWidth;
-//     let y = e.clientY / window.innerHeight;
-//     bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-
-// });
-
-scoreCounter = document.getElementById('score-counter');
-
-// function for adding score, currently unused
+scoreCounter = document.getElementById('score-counter')
 
 const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
@@ -58,6 +47,7 @@ const ultraMayhem = () => {
         gameBtns.forEach(gameButton => {
             gameButton.classList.add('mayhem-rotate-fast');
         });
+        document.getElementById('icon').classList.add('mayhem-colored');
         musicPlaying=false;
         ultraMayhemSong.pause();
         ultraMayhemSong.currentTime=0;
@@ -76,6 +66,7 @@ const ultraMayhem = () => {
         gameBtns.forEach(gameButton => {
             gameButton.classList.remove('mayhem-rotate-fast');
         });
+        document.getElementById('icon').classList.remove('mayhem-colored');
         musicPlaying=true;
         mainSong.pause();
         mainSong.currentTime=0;
@@ -84,14 +75,6 @@ const ultraMayhem = () => {
 
         restart();
 }
-
-//hotkey functions
-
-// hotkeys('space', () => {
-//     mainSong.play();
-// })
-
-// onclick events on gameButtons referenced in html
 
 const keymap = {
     81: "q",
