@@ -1,5 +1,5 @@
-const popup = document.getElementById('instruc-popup');
 const startButton = document.getElementById('start-game');
+const module = document.getElementById('instructions');
 const audioQ = document.getElementById('audioQ');
 const audioW = document.getElementById('audioW');
 const audioE = document.getElementById('audioE');
@@ -13,8 +13,13 @@ const audioX = document.getElementById('audioX');
 const audioC = document.getElementById('audioC');
 const audioV = document.getElementById('audioV');
 const mainSong = document.getElementById('mainSong');
+const winSound = document.getElementById("winSound");
+const loseSound = document.getElementById("loseSound");
 const gameButtons = document.getElementsByClassName('square');
 const audio = document.createElement('audio');
+const winText = document.getElementById('winText');
+const loseText = document.getElementById('loseText');
+
 
 // parralax for music notes
 // let bg = document.querySelector('.parallax');
@@ -25,16 +30,6 @@ const audio = document.createElement('audio');
 
 // });
 
-
-
-
-startButton.addEventListener('click', startGame);
-
-
-function startGame() {
-    popup.classList.add('hide');
-}
-
 scoreCounter = document.getElementById('score-counter');
 
 // function for adding score, currently unused
@@ -43,11 +38,15 @@ const addScore = () => {
     scoreCounter.innerText = parseInt(scoreCounter.innerText) + 1;
 }
 
+const removeScore = () => {
+    scoreCounter.innerText = 0;
+}
+
 //hotkey functions
 
-hotkeys('space', () => {
-    mainSong.play();
-})
+// hotkeys('space', () => {
+//     mainSong.play();
+// })
 
 // onclick events on gameButtons referenced in html
 
@@ -66,175 +65,138 @@ const keymap = {
     86: "v"
 }
 
-const keys = document.querySelectorAll(".key");
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+// Game Logic 
 
-function removeTransition(event) {
-    
-     this.classList.remove('press');
-  }
+const letterArray = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v'];
+const playerArray = [];
+const gameArray = [];
+let playerIndex = 0;
+let round = 1; 
+musicPlaying = false;
+playerInput = true;
 
-  function buttonHandler (key) {
-    play(key);
-  }
+const onPress = (key, audio) => {
+    if(playerInput){
+    let keyElement = document.getElementById(key);
+    let audioElement = document.getElementById(audio);
 
-  function play(key) {
-    var keyElement = document.querySelector(`.key[id="${key}"]`); 
-    var audioElement = document.querySelector(`audio[data-key="${key}"]`);
-    
     keyElement.classList.add('press');
+
     audioElement.currentTime = 0;
-    audioElement.play();
-    setInterval(() => {
-        keyElement.classList.remove('press');
-    }, 200)
+        audioElement.play();
+        setTimeout(() => {
+            keyElement.classList.remove('press');
+        }, 200)
+
+    playerArray.push(key);
+
+    if (playerArray[playerIndex] === gameArray[playerIndex]) {
+        ++playerIndex;
+    } else {
+        
+        // FAIL STATE
+        loseSound.play();
+        loseText.classList.remove('hide');
+        setTimeout(() => {
+            loseText.classList.add('hide');
+        }, 2000);
+        playerIndex = 0;
+        playerArray.length = 0;
+        gameArray.length = 0;
+        round = 1;
+        removeScore();
+        return null;
+    }
+
+    if (playerArray[gameArray.length-1] === gameArray[gameArray.length-1]) {
+        console.log(playerArray);
+        winSound.play();
+        winText.classList.remove('hide');
+        setTimeout(() => {
+            winText.classList.add('hide');
+        }, 2000);
+        playerIndex = 0;
+        ++round;
+        addScore();
+        startGame(round);
+    } 
+}
 }
 
-window.onkeydown = (event) => {
-    var key = keymap[event.keyCode];
-    if (key) {
-      play(key);
+
+const restart = () => {
+    if(!musicPlaying){
+        mainSong.play();
     }
-  }
+    gameArray.length = 0;
+    console.log(gameArray);
+    playerIndex = 0;
+    round = 1;
+    removeScore();
+    startGame(1);
+}
 
+const startGame = (num) => {
+    playerInput=false;
+    playerArray.length = 0; 
 
-
-
-
-
-
-
-
-
-
-// circle sounds
-
-$("#button1").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
+    for (let i = num-1; i < num; i++ ) {
+        let choose = Math.floor(Math.random() * 12);
+        gameArray[i] = letterArray[choose];
+        console.log(gameArray);
     }
-    audio.currentTime = 2;
-    audio.play();
-});
 
-$("#button2").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
+    //plays sequence
+    let i = 0;
+    const gameArraySequencePlay = setInterval(() => {
+        if (i < gameArray.length) {
+            let index = gameArray[i];
+            let keyElement = document.getElementById(index);
+            console.log(keyElement);
+            keyElement.classList.add('press');
+           
+            setTimeout(() => {
+                keyElement.classList.remove('press');
+            }, 1000);
 
-});
+            let audioElement = document.querySelector(`audio[data-key="${gameArray[i]}"]`);
 
-$("#button3").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
+            audioElement.currentTime = 0;
+            audioElement.play();
+            
+            ++i;
+        } else {
+            playerInput = true;
+            clearInterval(gameArraySequencePlay);
+            console.log(gameArray);
+        }
+    }, 1500)
+}
 
-$("#button4").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button5").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button6").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button7").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button8").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button9").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/1.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button10").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/2.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button11").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/3.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button12").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/4.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button13").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/5.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
+//hotkeys
 
 
-$("#button14").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/6.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button15").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/7.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
-
-$("#button16").click(function () {
-    if (audio.canPlayType('audio/mpeg')) {
-        audio.setAttribute('src', 'assets/c_sounds/8.mp3');
-    }
-    audio.currentTime = 0;
-    audio.play();
-});
+hotkeys('q', () => {
+if(playerInput){onPress('q', 'audioQ')}});
+hotkeys('w', () => {
+if(playerInput){onPress('w', 'audioW')}});
+hotkeys('e', () => {
+if(playerInput){onPress('e', 'audioE')}});
+hotkeys('r', () => {
+if(playerInput){onPress('r', 'audioR')}});
+hotkeys('a', () => {
+if(playerInput){onPress('a', 'audioA')}});
+hotkeys('s', () => {
+if(playerInput){onPress('s', 'audioS')}});
+hotkeys('d', () => {
+if(playerInput){onPress('d', 'audioD')}});
+hotkeys('f', () => {
+if(playerInput){onPress('f', 'audioF')}});
+hotkeys('z', () => {
+if(playerInput){onPress('z', 'audioZ')}});
+hotkeys('x', () => {
+if(playerInput){onPress('x', 'audioX')}});
+hotkeys('c', () => {
+if(playerInput){onPress('c', 'audioC')}});
+hotkeys('v', () => {
+if(playerInput){onPress('v', 'audioV')}});
