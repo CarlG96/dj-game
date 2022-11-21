@@ -7,8 +7,6 @@
 ## Live Project Link
 <a href="https://carlg96.github.io/dj-game/">Live project here</a>
 
-## [Presentation Video]('#')
-
 ### Game Idea 
 
 Our game is a memory-based 'Simon Says' game in which a sequence of button inputs is shown to the player; afterwords the player must repeat the same sequence by 
