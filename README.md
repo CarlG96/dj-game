@@ -4,7 +4,7 @@
 
 <img src="./assets/images/ultramayhem-picture.jpg">
 
-## [Live Project link]("https://carlg96.github.io/dj-game/")
+[Live Project link]("https://carlg96.github.io/dj-game/")
 
 ## [Presentation Video]('#')
 
