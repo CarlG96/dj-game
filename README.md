@@ -1,8 +1,10 @@
 # !!!ULTRA MAYHEM!!!
 
-### responsive picture 
+### Picture
 
-## [Live Project link]('#')
+<img src="./assets/images/ultramayhem-picture.jpg">
+
+## [Live Project link]("https://carlg96.github.io/dj-game/")
 
 ## [Presentation Video]('#')
 
@@ -44,8 +46,6 @@ the player will have to work their way up again.
 ### Wireframes
 
 ![Wireframes](documents/wireframe.png)
-
-<img src="./assets/images/dj-deck-wireframe-picture.png">
 
 ### References 
 
